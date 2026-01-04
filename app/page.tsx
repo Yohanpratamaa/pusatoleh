@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import ProductCard from "@/components/product/ProductCard";
 import Button from "@/components/ui/Button";
@@ -14,10 +15,14 @@ export default function HomePage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-20">
-        {/* Clean Background with subtle gradient */}
-        <div className="absolute inset-0 bg-linear-to-br from-orange-600 via-amber-500 to-orange-400">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,0,0,0.1)_0%,transparent_50%)]" />
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url(/bg.png)" }}
+          />
+          {/* Dark overlay untuk keterbacaan teks */}
+          <div className="absolute inset-0 bg-black/40" />
         </div>
 
         {/* Content */}
@@ -519,15 +524,13 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="absolute inset-0 bg-linear-to-br from-orange-400 to-amber-500 flex items-center justify-center">
-                <svg
-                  className="w-32 h-32 text-white opacity-50"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                </svg>
-              </div>
+              <Image
+                src="/ngobrol.png"
+                alt="Toko Oleh-Oleh - Pusat Oleh Oleh Banyuwis"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </motion.div>
           </div>
         </div>
