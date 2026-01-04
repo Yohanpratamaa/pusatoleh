@@ -83,9 +83,9 @@ export default function ContactPage() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-1">
                     WhatsApp
                   </h3>
-                  <p className="text-gray-600">+62 812-3456-7890</p>
+                  <p className="text-gray-600">+62 851-1995-5641</p>
                   <a
-                    href="https://wa.me/6281234567890"
+                    href="https://wa.me/6285119955641"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-orange-600 hover:text-orange-700 text-sm font-medium"
@@ -116,9 +116,9 @@ export default function ContactPage() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-1">
                     Email
                   </h3>
-                  <p className="text-gray-600">info@tokooleh-oleh.com</p>
+                  <p className="text-gray-600">pusatoleholehbampia@gmail.com</p>
                   <a
-                    href="mailto:info@tokooleh-oleh.com"
+                    href="mailto:pusatoleholehbampia@gmail.com"
                     className="text-orange-600 hover:text-orange-700 text-sm font-medium"
                   >
                     Kirim Email →
@@ -154,11 +154,11 @@ export default function ContactPage() {
                     Alamat
                   </h3>
                   <p className="text-gray-600">
-                    Jl. Merdeka No. 123
+                    Jl. Raya Bagelenan, Krajan, Bagelenan
                     <br />
-                    Jakarta Pusat, DKI Jakarta
+                    Kec. Srengat, Kab. Blitar
                     <br />
-                    Indonesia 10110
+                    Jawa Timur 66152
                   </p>
                 </div>
               </div>
@@ -184,13 +184,7 @@ export default function ContactPage() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-1">
                     Jam Operasional
                   </h3>
-                  <p className="text-gray-600">
-                    Senin - Jumat: 09:00 - 18:00
-                    <br />
-                    Sabtu: 09:00 - 15:00
-                    <br />
-                    Minggu: Tutup
-                  </p>
+                  <p className="text-gray-600">Setiap Hari : 07.00 - 21.00</p>
                 </div>
               </div>
             </div>
@@ -261,7 +255,7 @@ export default function ContactPage() {
           viewport={{ once: true }}
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613!3d-6.1751206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sNational%20Monument!5e0!3m2!1sen!2sid!4v1650000000000!5m2!1sen!2sid"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.3479881291973!2d112.084601!3d-8.0659429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78ef1a8f7c2981%3A0x310eb2f0fa210b0b!2sPusat%20Oleh-Oleh%20Bampia%20Srengat!5e0!3m2!1sid!2sid!4v1767507548415!5m2!1sid!2sid"
             width="100%"
             height="400"
             style={{ border: 0 }}

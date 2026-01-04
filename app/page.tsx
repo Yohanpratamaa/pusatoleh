@@ -51,7 +51,7 @@ export default function HomePage() {
                 />
               </svg>
               <span className="text-sm font-semibold text-white">
-                Terpercaya Sejak 2014
+                Terpercaya Sejak 2022
               </span>
             </motion.div>
 
@@ -61,10 +61,10 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Oleh-Oleh Terbaik
+              Pusat Oleh Oleh Terbaik
               <br />
               <span className="bg-gradient-to-r from-amber-200 to-yellow-300 bg-clip-text text-transparent">
-                Nusantara
+                Bampia Srengat
               </span>
             </motion.h1>
 
@@ -423,61 +423,81 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.slice(0, 3).map((testimonial, index) => (
-              <motion.div
-                key={testimonial.id}
-                className="relative bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-orange-200 hover:shadow-2xl transition-all duration-300 group"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
-                whileHover={{ y: -5 }}
-              >
-                {/* Quote icon */}
-                <div className="absolute top-6 right-6 text-orange-200 group-hover:text-orange-300 transition-colors">
-                  <svg
-                    className="w-10 h-10"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
-                </div>
-                <div className="flex items-center mb-4">
-                  {[...Array(5)].map((_, i) => (
+          {/* Slider Container with Overflow Hidden */}
+          <div className="relative overflow-hidden">
+            {/* Gradient Overlays for Fade Effect */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" />
+
+            {/* Animated Slider Track */}
+            <motion.div
+              className="flex gap-6"
+              animate={{
+                x: [0, -100 * testimonials.length],
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 20,
+                  ease: "linear",
+                },
+              }}
+            >
+              {/* Duplicate testimonials for seamless loop */}
+              {[...testimonials, ...testimonials].map((testimonial, index) => (
+                <motion.div
+                  key={`${testimonial.id}-${index}`}
+                  className="relative bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-orange-200 transition-all duration-300 group flex-shrink-0 w-[380px]"
+                  whileHover={{ y: -5 }}
+                >
+                  {/* Quote icon */}
+                  <div className="absolute top-6 right-6 text-orange-200 group-hover:text-orange-300 transition-colors">
                     <svg
-                      key={i}
-                      className={`w-5 h-5 ${
-                        i < testimonial.rating
-                          ? "text-yellow-400"
-                          : "text-gray-300"
-                      }`}
+                      className="w-10 h-10"
                       fill="currentColor"
-                      viewBox="0 0 20 20"
+                      viewBox="0 0 24 24"
                     >
-                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                     </svg>
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-4 italic">
-                  &quot;{testimonial.comment}&quot;
-                </p>
-                <div className="flex items-center">
-                  <div className="w-10 h-10 bg-orange-200 rounded-full flex items-center justify-center mr-3">
-                    <span className="text-orange-600 font-bold">
-                      {testimonial.name.charAt(0)}
-                    </span>
                   </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">
-                      {testimonial.name}
-                    </p>
-                    <p className="text-sm text-gray-500">{testimonial.date}</p>
+                  <div className="flex items-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <svg
+                        key={i}
+                        className={`w-5 h-5 ${
+                          i < testimonial.rating
+                            ? "text-yellow-400"
+                            : "text-gray-300"
+                        }`}
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                      </svg>
+                    ))}
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                  <p className="text-gray-700 mb-4 italic">
+                    &quot;{testimonial.comment}&quot;
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-orange-200 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-orange-600 font-bold">
+                        {testimonial.name.charAt(0)}
+                      </span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">
+                        {testimonial.name}
+                      </p>
+                      <p className="text-sm text-gray-500">
+                        {testimonial.date}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </SectionWrapper>

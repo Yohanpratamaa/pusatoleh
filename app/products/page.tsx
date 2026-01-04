@@ -210,11 +210,13 @@ function ProductsContent() {
                 produk
               </p>
               <div className="flex items-center gap-2">
-                <label className="text-sm text-gray-600">Urutkan:</label>
+                <label className="text-sm text-gray-700 font-medium">
+                  Urutkan:
+                </label>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-900 bg-white"
                 >
                   <option value="best-seller">Best Seller</option>
                   <option value="price-low">Harga Terendah</option>
