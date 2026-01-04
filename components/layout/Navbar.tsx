@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCartStore } from "@/lib/store";
 import { usePathname } from "next/navigation";
@@ -49,26 +50,22 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="bg-linear-to-br from-orange-500 to-amber-600 p-2 rounded-lg">
-                <svg
-                  className="w-8 h-8 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"
-                  />
-                </svg>
+              <div className="relative w-12 h-12 border-2 p-1.5 rounded-full overflow-hidden">
+                <Image
+                  src="/bampia.png"
+                  alt="Logo Bampia Srengat"
+                  fill
+                  className="object-contain p-0.5"
+                  priority
+                />
               </div>
               <div className="hidden sm:block">
                 <h1 className="text-xl font-bold text-gray-900">
                   Pusat Oleh Oleh
                 </h1>
-                <p className="text-xs font-bold text-gray-600">Bampia Srengat</p>
+                <p className="text-xs font-bold text-gray-600">
+                  Bampia Srengat
+                </p>
               </div>
             </motion.div>
           </Link>
