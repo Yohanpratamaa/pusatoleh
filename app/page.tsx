@@ -301,7 +301,7 @@ export default function HomePage() {
         </div>
       </SectionWrapper>
 
-      {/* Promo Banner */}
+      {/* Location Section */}
       <SectionWrapper className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-orange-600 via-amber-500 to-orange-600" />
 
@@ -338,7 +338,7 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            {/* Flash Sale Badge */}
+            {/* Location Badge */}
             <motion.div
               className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full mb-6 border border-white/30"
               animate={{
@@ -349,28 +349,204 @@ export default function HomePage() {
                 repeat: Infinity,
               }}
             >
-              <span className="text-2xl">🎉</span>
-              <span className="font-bold text-lg">Flash Sale</span>
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+              <span className="font-bold text-lg">Kunjungi Toko Kami</span>
             </motion.div>
 
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              Diskon Hingga
+            <h2 className="text-4xl md:text-6xl font-bold mb-8">
+              Pusat Oleh Oleh Bampia Srengat
             </h2>
+
+            {/* Location Info Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto">
+              {/* Address Card */}
+              <motion.div
+                className="bg-white/10 backdrop-blur-md border border-white/30 rounded-2xl p-6 text-left"
+                whileHover={{ scale: 1.05, y: -5 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                <div className="bg-white/20 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="font-bold text-xl mb-2">Alamat</h3>
+                <p className="text-white/90 leading-relaxed text-sm">
+                  Jl. Raya Bagelenan, Krajan, Bagelenan
+                  <br />
+                  Kec. Srengat, Kabupaten Blitar
+                  <br />
+                  Jawa Timur 66152
+                </p>
+              </motion.div>
+
+              {/* Operating Hours Card */}
+              <motion.div
+                className="bg-white/10 backdrop-blur-md border border-white/30 rounded-2xl p-6 text-left"
+                whileHover={{ scale: 1.05, y: -5 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+              >
+                <div className="bg-white/20 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="font-bold text-xl mb-2">Jam Buka</h3>
+                <p className="text-white/90 leading-relaxed">
+                  Setiap Hari
+                  <br />
+                  07:00 - 21:00 WIB
+                  <br />
+                  <span className="text-xs opacity-80">Buka Tanpa Libur</span>
+                </p>
+              </motion.div>
+
+              {/* Contact Card */}
+              <motion.div
+                className="bg-white/10 backdrop-blur-md border border-white/30 rounded-2xl p-6 text-left"
+                whileHover={{ scale: 1.05, y: -5 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+              >
+                <div className="bg-white/20 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="font-bold text-xl mb-2">Kontak</h3>
+                <p className="text-white/90 leading-relaxed text-sm">
+                  WhatsApp: +62 851-1995-5641
+                  <br />
+                  Email: pusatoleholehbampia@gmail.com
+                  <br />
+                  <span className="text-xs opacity-80">Fast Response</span>
+                </p>
+              </motion.div>
+            </div>
+
+            {/* Google Maps Embed */}
             <motion.div
-              className="text-7xl md:text-9xl font-black mb-6 bg-white text-orange-600 inline-block px-8 py-4 rounded-3xl shadow-2xl"
-              whileHover={{ scale: 1.05, rotate: [-2, 2, -2] }}
+              className="max-w-5xl mx-auto mb-10"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
             >
-              30%
+              <div className="relative rounded-3xl overflow-hidden border-4 border-white/30 shadow-2xl backdrop-blur-sm">
+                {/* Map Header */}
+                <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/50 to-transparent z-10 p-4">
+                  <div className="flex items-center gap-2">
+                    <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
+                      <span className="text-white font-semibold text-sm flex items-center gap-2">
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                          />
+                        </svg>
+                        Srengat, Blitar - Jawa Timur
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Google Maps iframe */}
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.3479881291973!2d112.084601!3d-8.0659429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78ef1a8f7c2981%3A0x310eb2f0fa210b0b!2sPusat%20Oleh-Oleh%20Bampia%20Srengat!5e0!3m2!1sid!2sid!4v1767507548415!5m2!1sid!2sid"
+                  width="100%"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full"
+                ></iframe>
+
+                {/* Decorative corner elements */}
+                <div className="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-white/40 rounded-tr-xl"></div>
+                <div className="absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 border-white/40 rounded-bl-xl"></div>
+              </div>
             </motion.div>
-            <p className="text-xl md:text-2xl mb-8 font-medium">
-              Untuk Produk Pilihan • Penawaran Terbatas!
-            </p>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/products?promo=true">
+              <a
+                href="https://maps.google.com/?q=Srengat,Blitar"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
-                  variant="primary"
+                  variant="ghost"
                   size="lg"
-                  className="bg-black text-orange-600 hover:bg-gray-100 hover:scale-105 transition-transform shadow-xl"
+                  className="bg-white text-orange-600 hover:bg-gray-50 hover:scale-105 transition-all shadow-xl border-2 border-white font-bold"
                 >
                   <svg
                     className="w-5 h-5 mr-2"
@@ -382,16 +558,21 @@ export default function HomePage() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                      d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
                     />
                   </svg>
-                  Belanja Sekarang
+                  Buka di Google Maps
+                </Button>
+              </a>
+              <Link href="/contact">
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  className="border-2 border-white text-white hover:bg-white/20 font-bold"
+                >
+                  Hubungi Kami
                 </Button>
               </Link>
-              <div className="text-white/90 text-sm">
-                ⏰ Berakhir dalam:{" "}
-                <span className="font-bold">3 Hari 12 Jam</span>
-              </div>
             </div>
           </motion.div>
         </div>

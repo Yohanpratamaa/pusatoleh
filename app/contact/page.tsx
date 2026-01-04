@@ -246,24 +246,6 @@ export default function ContactPage() {
             </form>
           </motion.div>
         </div>
-
-        {/* Map */}
-        <motion.div
-          className="mt-16 rounded-2xl overflow-hidden shadow-lg"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.3479881291973!2d112.084601!3d-8.0659429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78ef1a8f7c2981%3A0x310eb2f0fa210b0b!2sPusat%20Oleh-Oleh%20Bampia%20Srengat!5e0!3m2!1sid!2sid!4v1767507548415!5m2!1sid!2sid"
-            width="100%"
-            height="400"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </motion.div>
       </div>
     </div>
   );
