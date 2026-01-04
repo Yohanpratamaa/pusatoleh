@@ -13,7 +13,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-start justify-center overflow-hidden pt-24 md:pt-32">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-20">
         {/* Clean Background with subtle gradient */}
         <div className="absolute inset-0 bg-linear-to-br from-orange-600 via-amber-500 to-orange-400">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
