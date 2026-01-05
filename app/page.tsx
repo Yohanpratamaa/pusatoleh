@@ -74,8 +74,8 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Oleh-oleh khas Indonesia dengan kualitas terbaik. Dari keripik
-              hingga kerajinan tangan, semua ada di sini!
+              Oleh-oleh khas daerah dengan kualitas terbaik. Dari kue kering
+              hingga makanan basah, semua ada di sini!
             </motion.p>
 
             <motion.div
