@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -73,24 +74,18 @@ const Footer = () => {
               transition={{ duration: 0.5 }}
             >
               <div className="flex items-center space-x-2 mb-4">
-                <div className="bg-linear-to-br from-amber-400 to-yellow-500 p-2 rounded-lg">
-                  <svg
-                    className="w-8 h-8 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"
-                    />
-                  </svg>
+                <div className="relative w-12 h-12 border-2 p-1.5 rounded-full overflow-hidden bg-white">
+                  <Image
+                    src="/bampia.png"
+                    alt="Logo Bampia Srengat"
+                    fill
+                    className="object-contain p-0.5"
+                    priority
+                  />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">Toko Oleh-Oleh</h3>
-                  <p className="text-sm text-gray-400">Souvenir Nusantara</p>
+                  <h3 className="text-xl font-bold">Pusat Oleh Oleh</h3>
+                  <p className="text-sm text-gray-400">Bampia Srengat</p>
                 </div>
               </div>
               <p className="text-gray-400 text-sm mb-4">

@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-20">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden md:-mt-20">
         {/* Background Image */}
         <div className="absolute inset-0">
           <div
@@ -22,11 +22,11 @@ export default function HomePage() {
             style={{ backgroundImage: "url(/bg.png)" }}
           />
           {/* Dark overlay untuk keterbacaan teks */}
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -56,7 +56,7 @@ export default function HomePage() {
             </motion.div>
 
             <motion.h1
-              className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -69,7 +69,7 @@ export default function HomePage() {
             </motion.h1>
 
             <motion.p
-              className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-6 md:mb-8 max-w-2xl mx-auto px-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -79,7 +79,7 @@ export default function HomePage() {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -126,29 +126,37 @@ export default function HomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
               <div className="text-white">
-                <div className="text-3xl md:text-4xl font-bold mb-2">500+</div>
-                <div className="text-sm md:text-base text-white/80">
+                <div className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1 md:mb-2">
+                  500+
+                </div>
+                <div className="text-xs md:text-sm lg:text-base text-white/80">
                   Produk Tersedia
                 </div>
               </div>
               <div className="text-white">
-                <div className="text-3xl md:text-4xl font-bold mb-2">10K+</div>
-                <div className="text-sm md:text-base text-white/80">
+                <div className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1 md:mb-2">
+                  10K+
+                </div>
+                <div className="text-xs md:text-sm lg:text-base text-white/80">
                   Pelanggan Puas
                 </div>
               </div>
               <div className="text-white">
-                <div className="text-3xl md:text-4xl font-bold mb-2">100%</div>
-                <div className="text-sm md:text-base text-white/80">
+                <div className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1 md:mb-2">
+                  100%
+                </div>
+                <div className="text-xs md:text-sm lg:text-base text-white/80">
                   Produk Asli
                 </div>
               </div>
               <div className="text-white">
-                <div className="text-3xl md:text-4xl font-bold mb-2">24/7</div>
-                <div className="text-sm md:text-base text-white/80">
+                <div className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1 md:mb-2">
+                  24/7
+                </div>
+                <div className="text-xs md:text-sm lg:text-base text-white/80">
                   Customer Service
                 </div>
               </div>
