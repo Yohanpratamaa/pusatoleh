@@ -21,12 +21,6 @@ const socialMediaPlatforms = [
         likes: "1.2K",
         comments: "89",
       },
-      {
-        image: "/bg.png",
-        caption: "Promo spesial akhir tahun! 🎉",
-        likes: "2.1K",
-        comments: "156",
-      },
     ],
   },
   {
@@ -66,25 +60,6 @@ const socialMediaPlatforms = [
     ],
   },
   {
-    id: "tokopedia",
-    name: "Tokopedia",
-    icon: "🛒",
-    color: "from-green-500 to-green-600",
-    username: "Bampia Srengat Store",
-    followers: "6.3K",
-    url: "https://www.tokopedia.com/bampiasrengat",
-    rating: "4.8",
-    sold: "9K+",
-    posts: [
-      {
-        image: "/bg.png",
-        caption: "Paket Hemat Bampia Mix Flavor",
-        price: "Rp 120.000",
-        discount: "15%",
-      },
-    ],
-  },
-  {
     id: "tiktok",
     name: "TikTok",
     icon: "🎵",
@@ -100,17 +75,6 @@ const socialMediaPlatforms = [
         likes: "8.9K",
       },
     ],
-  },
-  {
-    id: "whatsapp",
-    name: "WhatsApp",
-    icon: "💬",
-    color: "from-green-400 to-green-500",
-    username: "Customer Service",
-    phone: "+62 851-1995-5641",
-    url: "https://wa.me/6285119955641",
-    responseTime: "< 5 menit",
-    availability: "24/7",
   },
 ];
 
@@ -196,7 +160,7 @@ export default function SocialMediaPage() {
             transition={{ delay: 0.6 }}
           >
             <div className="text-white">
-              <div className="text-3xl font-bold">90K+</div>
+              <div className="text-3xl font-bold">79K+</div>
               <div className="text-sm text-white/80">Total Followers</div>
             </div>
             <div className="text-white">
@@ -204,7 +168,7 @@ export default function SocialMediaPage() {
               <div className="text-sm text-white/80">Rating Rata-rata</div>
             </div>
             <div className="text-white">
-              <div className="text-3xl font-bold">25K+</div>
+              <div className="text-3xl font-bold">12K+</div>
               <div className="text-sm text-white/80">Produk Terjual</div>
             </div>
             <div className="text-white">
@@ -341,95 +305,61 @@ export default function SocialMediaPage() {
 
                 {/* Content Preview */}
                 <div className="p-6">
-                  {platform.posts && platform.posts.length > 0 ? (
-                    <div className="space-y-4">
-                      {platform.posts.map((post, postIndex) => (
-                        <motion.div
-                          key={postIndex}
-                          className="border border-gray-200 rounded-xl overflow-hidden hover:border-amber-300 transition-colors"
-                          whileHover={{ y: -2 }}
-                        >
-                          {/* Post Image */}
-                          <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200">
-                            <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                              <span className="text-6xl">{platform.icon}</span>
-                            </div>
+                  <div className="space-y-4">
+                    {platform.posts.map((post, postIndex) => (
+                      <motion.div
+                        key={postIndex}
+                        className="border border-gray-200 rounded-xl overflow-hidden hover:border-amber-300 transition-colors"
+                        whileHover={{ y: -2 }}
+                      >
+                        {/* Post Image */}
+                        <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200">
+                          <div className="absolute inset-0 flex items-center justify-center text-gray-400">
+                            <span className="text-6xl">{platform.icon}</span>
                           </div>
+                        </div>
 
-                          {/* Post Info */}
-                          <div className="p-4 bg-gray-50">
-                            <p className="text-sm text-gray-800 font-medium mb-2 line-clamp-2">
-                              {post.caption}
-                            </p>
-                            <div className="flex items-center gap-4 text-xs text-gray-600">
-                              {post.likes && (
-                                <div className="flex items-center gap-1">
-                                  <span>❤️</span>
-                                  <span>{post.likes}</span>
-                                </div>
-                              )}
-                              {post.comments && (
-                                <div className="flex items-center gap-1">
-                                  <span>💬</span>
-                                  <span>{post.comments}</span>
-                                </div>
-                              )}
-                              {post.views && (
-                                <div className="flex items-center gap-1">
-                                  <span>👁️</span>
-                                  <span>{post.views}</span>
-                                </div>
-                              )}
-                              {post.price && (
-                                <div className="flex items-center gap-2 ml-auto">
-                                  <span className="font-bold text-amber-600">
-                                    {post.price}
+                        {/* Post Info */}
+                        <div className="p-4 bg-gray-50">
+                          <p className="text-sm text-gray-800 font-medium mb-2 line-clamp-2">
+                            {post.caption}
+                          </p>
+                          <div className="flex items-center gap-4 text-xs text-gray-600">
+                            {post.likes && (
+                              <div className="flex items-center gap-1">
+                                <span>❤️</span>
+                                <span>{post.likes}</span>
+                              </div>
+                            )}
+                            {post.comments && (
+                              <div className="flex items-center gap-1">
+                                <span>💬</span>
+                                <span>{post.comments}</span>
+                              </div>
+                            )}
+                            {post.views && (
+                              <div className="flex items-center gap-1">
+                                <span>👁️</span>
+                                <span>{post.views}</span>
+                              </div>
+                            )}
+                            {post.price && (
+                              <div className="flex items-center gap-2 ml-auto">
+                                <span className="font-bold text-amber-600">
+                                  {post.price}
+                                </span>
+                                {post.discount && (
+                                  <span className="bg-red-500 text-white px-2 py-0.5 rounded text-xs font-bold">
+                                    -{post.discount}
                                   </span>
-                                  {post.discount && (
-                                    <span className="bg-red-500 text-white px-2 py-0.5 rounded text-xs font-bold">
-                                      -{post.discount}
-                                    </span>
-                                  )}
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
-                  ) : (
-                    // WhatsApp special content
-                    <div className="space-y-4">
-                      <div className="bg-green-50 border border-green-200 rounded-xl p-4">
-                        <div className="flex items-center gap-3 mb-3">
-                          <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl">
-                            {platform.icon}
-                          </div>
-                          <div>
-                            <div className="font-bold text-gray-900">
-                              {platform.username}
-                            </div>
-                            <div className="text-sm text-green-600">
-                              ● Online - {platform.availability}
-                            </div>
+                                )}
+                              </div>
+                            )}
                           </div>
                         </div>
-                        <div className="space-y-2 text-sm text-gray-700">
-                          <p>
-                            📞 <strong>Phone:</strong> {platform.phone}
-                          </p>
-                          <p>
-                            ⚡ <strong>Response Time:</strong>{" "}
-                            {platform.responseTime}
-                          </p>
-                          <p className="text-xs text-gray-500 mt-3">
-                            Chat langsung dengan customer service kami untuk
-                            informasi produk, pemesanan, dan pertanyaan lainnya!
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                      </motion.div>
+                    ))}
+                  </div>
 
                   {/* Visit Button */}
                   <motion.a
@@ -440,11 +370,9 @@ export default function SocialMediaPage() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    {platform.id === "whatsapp"
-                      ? "💬 Chat Sekarang"
-                      : platform.id === "instagram" ||
-                        platform.id === "facebook" ||
-                        platform.id === "tiktok"
+                    {platform.id === "instagram" ||
+                    platform.id === "facebook" ||
+                    platform.id === "tiktok"
                       ? `Kunjungi ${platform.name}`
                       : `Belanja di ${platform.name}`}
                   </motion.a>
