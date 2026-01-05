@@ -27,7 +27,7 @@ const Navbar = () => {
     { href: "/products", label: "Produk" },
     { href: "/about", label: "Tentang" },
     { href: "/contact", label: "Kontak" },
-    { href: "/tracking", label: "Lacak Pesanan" },
+    { href: "/tracking", label: "Social Media" },
   ];
 
   const totalItems = getTotalItems();
