@@ -13,12 +13,38 @@ export default function ContactPage() {
     subject: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    toast.success("Pesan berhasil dikirim! Kami akan menghubungi Anda segera.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(
+        "https://n8n.srv1240448.hstgr.cloud/webhook-test/pesan-masuk",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (response.ok) {
+        toast.success(
+          "Pesan berhasil dikirim! Kami akan menghubungi Anda segera."
+        );
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        throw new Error("Gagal mengirim pesan");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast.error("Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (
@@ -236,12 +262,18 @@ export default function ContactPage() {
                   onChange={handleInputChange}
                   rows={5}
                   required
-                  className="px-4 py-2.5 border rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 border-gray-300"
+                  className="px-4 py-2.5 border rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 border-gray-300 text-gray-900"
                   placeholder="Tulis pesan Anda di sini..."
                 />
               </div>
-              <Button type="submit" variant="primary" size="lg" fullWidth>
-                Kirim Pesan
+              <Button
+                type="submit"
+                variant="primary"
+                size="lg"
+                fullWidth
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Mengirim..." : "Kirim Pesan"}
               </Button>
             </form>
           </motion.div>
