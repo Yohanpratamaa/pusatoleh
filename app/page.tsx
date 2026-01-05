@@ -88,7 +88,7 @@ export default function HomePage() {
                 <Button
                   variant="primary"
                   size="lg"
-                  className="bg-black text-amber-500 hover:bg-gray-100"
+                  className="bg-black text-amber-500 hover:bg-amber-400 hover:text-gray-900"
                 >
                   <svg
                     className="w-5 h-5 mr-2"
@@ -110,7 +110,7 @@ export default function HomePage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-white text-white hover:bg-white/10"
+                  className="border-white text-white hover:bg-amber-400 hover:text-gray-900 hover:border-amber-400"
                 >
                   Tentang Kami
                 </Button>
