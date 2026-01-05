@@ -88,7 +88,7 @@ export default function HomePage() {
                 <Button
                   variant="primary"
                   size="lg"
-                  className="bg-black text-orange-600 hover:bg-gray-100"
+                  className="bg-black text-amber-500 hover:bg-gray-100"
                 >
                   <svg
                     className="w-5 h-5 mr-2"
@@ -191,7 +191,7 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <motion.span
-              className="inline-block px-4 py-2 bg-orange-100 text-orange-600 rounded-full text-sm font-semibold mb-4"
+              className="inline-block px-4 py-2 bg-yellow-100 text-amber-600 rounded-full text-sm font-semibold mb-4"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -214,7 +214,7 @@ export default function HomePage() {
                 href={`/products?category=${category.slug}`}
               >
                 <motion.div
-                  className="relative bg-white rounded-2xl p-6 text-center border-2 border-gray-100 hover:border-orange-300 hover:shadow-2xl transition-all duration-300 group overflow-hidden"
+                  className="relative bg-white rounded-2xl p-6 text-center border-2 border-gray-100 hover:border-yellow-300 hover:shadow-2xl transition-all duration-300 group overflow-hidden"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -222,7 +222,7 @@ export default function HomePage() {
                   whileHover={{ y: -8 }}
                 >
                   {/* Gradient Background on Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-amber-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-amber-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   <div className="relative z-10">
                     <motion.div
@@ -232,13 +232,13 @@ export default function HomePage() {
                     >
                       {category.icon}
                     </motion.div>
-                    <h3 className="font-bold text-gray-900 group-hover:text-orange-600 transition-colors">
+                    <h3 className="font-bold text-gray-900 group-hover:text-amber-600 transition-colors">
                       {category.name}
                     </h3>
                   </div>
 
                   {/* Corner decoration */}
-                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-orange-200/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-amber-200/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity" />
                 </motion.div>
               </Link>
             ))}
@@ -256,7 +256,7 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <motion.span
-              className="inline-block px-4 py-2 bg-gradient-to-r from-orange-100 to-amber-100 text-orange-600 rounded-full text-sm font-semibold mb-4"
+              className="inline-block px-4 py-2 bg-gradient-to-r from-yellow-100 to-amber-100 text-amber-600 rounded-full text-sm font-semibold mb-4"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -303,7 +303,7 @@ export default function HomePage() {
 
       {/* Location Section */}
       <SectionWrapper className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-600 via-amber-500 to-orange-600" />
+        <div className="absolute inset-0 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500" />
 
         {/* Animated background shapes */}
         <motion.div
@@ -546,7 +546,7 @@ export default function HomePage() {
                 <Button
                   variant="ghost"
                   size="lg"
-                  className="bg-white text-orange-600 hover:bg-gray-50 hover:scale-105 transition-all shadow-xl border-2 border-white font-bold"
+                  className="bg-white text-amber-600 hover:bg-gray-50 hover:scale-105 transition-all shadow-xl border-2 border-white font-bold"
                 >
                   <svg
                     className="w-5 h-5 mr-2"
@@ -629,11 +629,11 @@ export default function HomePage() {
               {[...testimonials, ...testimonials].map((testimonial, index) => (
                 <motion.div
                   key={`${testimonial.id}-${index}`}
-                  className="relative bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-orange-200 transition-all duration-300 group flex-shrink-0 w-[380px]"
+                  className="relative bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-amber-200 transition-all duration-300 group flex-shrink-0 w-[380px]"
                   whileHover={{ y: -5 }}
                 >
                   {/* Quote icon */}
-                  <div className="absolute top-6 right-6 text-orange-200 group-hover:text-orange-300 transition-colors">
+                  <div className="absolute top-6 right-6 text-amber-200 group-hover:text-amber-300 transition-colors">
                     <svg
                       className="w-10 h-10"
                       fill="currentColor"
@@ -662,8 +662,8 @@ export default function HomePage() {
                     &quot;{testimonial.comment}&quot;
                   </p>
                   <div className="flex items-center">
-                    <div className="w-10 h-10 bg-orange-200 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-orange-600 font-bold">
+                    <div className="w-10 h-10 bg-amber-200 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-amber-600 font-bold">
                         {testimonial.name.charAt(0)}
                       </span>
                     </div>
@@ -684,9 +684,9 @@ export default function HomePage() {
       </SectionWrapper>
 
       {/* About Us Section */}
-      <SectionWrapper className="bg-gradient-to-br from-orange-50 via-amber-50 to-orange-50 relative overflow-hidden">
+      <SectionWrapper className="bg-gradient-to-br from-yellow-50 via-amber-50 to-yellow-50 relative overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-72 h-72 bg-orange-200/30 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 w-72 h-72 bg-amber-200/30 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-200/30 rounded-full blur-3xl" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -765,7 +765,7 @@ export default function HomePage() {
                 repeat: Infinity,
               }}
             >
-              <span className="px-6 py-3 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-full font-semibold text-sm">
+              <span className="px-6 py-3 bg-gradient-to-r from-amber-400 to-yellow-400 text-white rounded-full font-semibold text-sm">
                 🚀 Mulai Petualangan Belanja Anda
               </span>
             </motion.div>
@@ -776,7 +776,7 @@ export default function HomePage() {
             <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
               Dapatkan oleh-oleh terbaik untuk keluarga dan teman-teman Anda.
               <br />
-              <span className="text-orange-400 font-semibold">
+              <span className="text-amber-400 font-semibold">
                 Pengiriman Cepat ke Seluruh Indonesia!
               </span>
             </p>

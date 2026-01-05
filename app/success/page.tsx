@@ -1,29 +1,29 @@
-'use client';
+"use client";
 
-import { useEffect, useState, Suspense } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
-import { motion } from 'framer-motion';
-import confetti from 'canvas-confetti';
-import Button from '@/components/ui/Button';
-import { formatPrice } from '@/utils/helpers';
-import Link from 'next/link';
+import { useEffect, useState, Suspense } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import confetti from "canvas-confetti";
+import Button from "@/components/ui/Button";
+import { formatPrice } from "@/utils/helpers";
+import Link from "next/link";
 
 function SuccessContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [order, setOrder] = useState<any>(null);
-  const orderNumber = searchParams.get('order');
+  const orderNumber = searchParams.get("order");
 
   useEffect(() => {
-    const lastOrder = localStorage.getItem('lastOrder');
+    const lastOrder = localStorage.getItem("lastOrder");
     if (lastOrder) {
       setOrder(JSON.parse(lastOrder));
-      
+
       // Trigger confetti
       confetti({
         particleCount: 100,
         spread: 70,
-        origin: { y: 0.6 }
+        origin: { y: 0.6 },
       });
     }
   }, []);
@@ -33,9 +33,7 @@ function SuccessContent() {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <p className="text-gray-600 mb-4">Pesanan tidak ditemukan</p>
-          <Button onClick={() => router.push('/')}>
-            Kembali ke Beranda
-          </Button>
+          <Button onClick={() => router.push("/")}>Kembali ke Beranda</Button>
         </div>
       </div>
     );
@@ -55,7 +53,7 @@ function SuccessContent() {
             className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
+            transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
           >
             <svg
               className="w-12 h-12 text-green-600"
@@ -99,7 +97,7 @@ function SuccessContent() {
             transition={{ delay: 0.5 }}
           >
             <p className="text-sm text-gray-600 mb-2">Nomor Pesanan</p>
-            <p className="text-2xl font-bold text-orange-600">{orderNumber}</p>
+            <p className="text-2xl font-bold text-amber-600">{orderNumber}</p>
           </motion.div>
 
           {/* Order Summary */}
@@ -109,11 +107,16 @@ function SuccessContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            <h3 className="font-semibold text-gray-900 mb-4">Ringkasan Pesanan</h3>
-            
+            <h3 className="font-semibold text-gray-900 mb-4">
+              Ringkasan Pesanan
+            </h3>
+
             <div className="space-y-2 mb-4">
               {order.items?.map((item: any) => (
-                <div key={item.product.id} className="flex justify-between text-sm">
+                <div
+                  key={item.product.id}
+                  className="flex justify-between text-sm"
+                >
                   <span className="text-gray-600">
                     {item.product.name} x{item.quantity}
                   </span>
@@ -142,19 +145,32 @@ function SuccessContent() {
 
           {/* Payment Info */}
           <motion.div
-            className="bg-orange-50 rounded-xl p-6 mb-8"
+            className="bg-yellow-50 rounded-xl p-6 mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
           >
-            <h3 className="font-semibold text-gray-900 mb-3">Informasi Pembayaran</h3>
+            <h3 className="font-semibold text-gray-900 mb-3">
+              Informasi Pembayaran
+            </h3>
             <p className="text-sm text-gray-700 mb-2">
-              Metode: <span className="font-medium">{order.paymentMethod?.name}</span>
+              Metode:{" "}
+              <span className="font-medium">{order.paymentMethod?.name}</span>
             </p>
             {order.paymentMethod?.accountNumber && (
               <div className="text-sm text-gray-700">
-                <p>No. Rekening: <span className="font-medium">{order.paymentMethod.accountNumber}</span></p>
-                <p>Atas Nama: <span className="font-medium">{order.paymentMethod.accountName}</span></p>
+                <p>
+                  No. Rekening:{" "}
+                  <span className="font-medium">
+                    {order.paymentMethod.accountNumber}
+                  </span>
+                </p>
+                <p>
+                  Atas Nama:{" "}
+                  <span className="font-medium">
+                    {order.paymentMethod.accountName}
+                  </span>
+                </p>
               </div>
             )}
             <p className="text-xs text-gray-600 mt-3">
@@ -169,12 +185,18 @@ function SuccessContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
-            <h3 className="font-semibold text-gray-900 mb-3">Alamat Pengiriman</h3>
+            <h3 className="font-semibold text-gray-900 mb-3">
+              Alamat Pengiriman
+            </h3>
             <p className="text-sm text-gray-700">
-              <strong>{order.shippingInfo?.name}</strong><br />
-              {order.shippingInfo?.phone}<br />
-              {order.shippingInfo?.address}<br />
-              {order.shippingInfo?.city}, {order.shippingInfo?.province} {order.shippingInfo?.postalCode}
+              <strong>{order.shippingInfo?.name}</strong>
+              <br />
+              {order.shippingInfo?.phone}
+              <br />
+              {order.shippingInfo?.address}
+              <br />
+              {order.shippingInfo?.city}, {order.shippingInfo?.province}{" "}
+              {order.shippingInfo?.postalCode}
             </p>
           </motion.div>
 
@@ -204,14 +226,16 @@ function SuccessContent() {
 
 export default function SuccessPage() {
   return (
-    <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading...</p>
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500 mx-auto mb-4"></div>
+            <p className="text-gray-600">Loading...</p>
+          </div>
         </div>
-      </div>
-    }>
+      }
+    >
       <SuccessContent />
     </Suspense>
   );

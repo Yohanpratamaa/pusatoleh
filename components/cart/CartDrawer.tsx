@@ -136,7 +136,7 @@ const CartDrawer = () => {
                           <h3 className="font-medium text-gray-900 text-sm line-clamp-2 mb-1">
                             {item.product.name}
                           </h3>
-                          <p className="text-orange-600 font-semibold text-sm mb-2">
+                          <p className="text-amber-600 font-semibold text-sm mb-2">
                             {formatPrice(item.product.price)}
                           </p>
 

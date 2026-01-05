@@ -137,7 +137,7 @@ function ProductsContent() {
                       onClick={() => changeCategory(category.slug)}
                       className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
                         selectedCategory === category.slug
-                          ? "bg-orange-100 text-orange-700 font-semibold"
+                          ? "bg-yellow-100 text-amber-700 font-semibold"
                           : "bg-gray-50 text-gray-700 hover:bg-gray-100"
                       }`}
                     >
@@ -216,7 +216,7 @@ function ProductsContent() {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-900 bg-white"
+                  className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 text-gray-900 bg-white"
                 >
                   <option value="best-seller">Best Seller</option>
                   <option value="price-low">Harga Terendah</option>
@@ -288,7 +288,7 @@ export default function ProductsPage() {
       fallback={
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600 mx-auto mb-4"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500 mx-auto mb-4"></div>
             <p className="text-gray-600">Loading products...</p>
           </div>
         </div>

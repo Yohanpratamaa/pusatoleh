@@ -30,7 +30,7 @@ function TrackingContent() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-linear-to-br from-orange-600 to-amber-500 py-20">
+      <section className="bg-linear-to-br from-amber-500 to-yellow-400 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             className="text-4xl md:text-5xl font-bold text-white mb-4"
@@ -86,7 +86,7 @@ function TrackingContent() {
               </h2>
               <p className="text-gray-600">
                 Nomor Pesanan:{" "}
-                <span className="font-semibold text-orange-600">
+                <span className="font-semibold text-amber-600">
                   {orderNumber}
                 </span>
               </p>
@@ -97,7 +97,7 @@ function TrackingContent() {
               {/* Progress Line */}
               <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-200" />
               <div
-                className="absolute left-8 top-0 w-0.5 bg-orange-600 transition-all duration-1000"
+                className="absolute left-8 top-0 w-0.5 bg-amber-500 transition-all duration-1000"
                 style={{
                   height: `${
                     (currentStatus / (orderStatuses.length - 1)) * 100
@@ -123,7 +123,7 @@ function TrackingContent() {
                       <div
                         className={`relative z-10 flex items-center justify-center w-16 h-16 rounded-full text-2xl transition-all duration-300 ${
                           isCompleted
-                            ? "bg-orange-600 shadow-lg scale-110"
+                            ? "bg-amber-500 shadow-lg scale-110"
                             : "bg-gray-200"
                         }`}
                       >
@@ -232,7 +232,7 @@ export default function TrackingPage() {
       fallback={
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600 mx-auto mb-4"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500 mx-auto mb-4"></div>
             <p className="text-gray-600">Loading...</p>
           </div>
         </div>

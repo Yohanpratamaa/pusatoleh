@@ -52,7 +52,7 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
             {/* Badges */}
             <div className="absolute top-3 left-3 flex flex-col gap-2">
               {product.isBestSeller && (
-                <span className="bg-orange-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                <span className="bg-amber-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
                   Best Seller
                 </span>
               )}
@@ -66,7 +66,7 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
             {/* Stock Badge */}
             {product.stock < 10 && product.stock > 0 && (
               <div className="absolute top-3 right-3">
-                <span className="bg-amber-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                <span className="bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
                   Stok: {product.stock}
                 </span>
               </div>
@@ -83,12 +83,12 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
           {/* Content */}
           <div className="p-4 flex-1 flex flex-col">
             {/* Category */}
-            <p className="text-xs text-orange-600 font-medium uppercase tracking-wide mb-1">
+            <p className="text-xs text-amber-600 font-medium uppercase tracking-wide mb-1">
               {product.category}
             </p>
 
             {/* Title */}
-            <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-orange-600 transition-colors">
+            <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-amber-600 transition-colors">
               {product.name}
             </h3>
 

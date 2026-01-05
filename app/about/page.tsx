@@ -7,7 +7,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-linear-to-br from-orange-600 to-amber-500 py-20">
+      <section className="bg-linear-to-br from-amber-500 to-yellow-400 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             className="text-4xl md:text-5xl font-bold text-white mb-4"
@@ -64,7 +64,7 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="absolute inset-0 bg-linear-to-br from-orange-400 to-amber-500 flex items-center justify-center">
+              <div className="absolute inset-0 bg-linear-to-br from-amber-400 to-yellow-500 flex items-center justify-center">
                 <span className="text-white text-8xl font-bold opacity-20">
                   2014
                 </span>
@@ -96,9 +96,9 @@ export default function AboutPage() {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
                 <svg
-                  className="w-8 h-8 text-orange-600"
+                  className="w-8 h-8 text-amber-600"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -150,19 +150,19 @@ export default function AboutPage() {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Misi</h3>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start">
-                  <span className="text-orange-600 mr-2">•</span>
+                  <span className="text-amber-600 mr-2">•</span>
                   <span>Melestarikan produk tradisional Indonesia</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-orange-600 mr-2">•</span>
+                  <span className="text-amber-600 mr-2">•</span>
                   <span>Memberdayakan UMKM lokal</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-orange-600 mr-2">•</span>
+                  <span className="text-amber-600 mr-2">•</span>
                   <span>Memberikan pelayanan terbaik kepada pelanggan</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-orange-600 mr-2">•</span>
+                  <span className="text-amber-600 mr-2">•</span>
                   <span>Menjamin kualitas produk yang dijual</span>
                 </li>
               </ul>

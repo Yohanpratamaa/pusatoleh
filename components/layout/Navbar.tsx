@@ -77,8 +77,8 @@ const Navbar = () => {
                 <motion.span
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     pathname === link.href
-                      ? "text-orange-600 bg-orange-50"
-                      : "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
+                      ? "text-amber-600 bg-yellow-50"
+                      : "text-gray-700 hover:text-amber-600 hover:bg-yellow-50"
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -94,7 +94,7 @@ const Navbar = () => {
             {/* Cart Button */}
             <motion.button
               onClick={openCart}
-              className="relative p-2 text-gray-700 hover:text-orange-600 transition-colors"
+              className="relative p-2 text-gray-700 hover:text-amber-600 transition-colors"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -113,7 +113,7 @@ const Navbar = () => {
               </svg>
               {totalItems > 0 && (
                 <motion.span
-                  className="absolute -top-1 -right-1 bg-orange-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center"
+                  className="absolute -top-1 -right-1 bg-amber-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ type: "spring", stiffness: 500, damping: 15 }}
@@ -126,7 +126,7 @@ const Navbar = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-gray-700 hover:text-orange-600"
+              className="md:hidden p-2 text-gray-700 hover:text-amber-600"
             >
               <svg
                 className="w-6 h-6"
@@ -171,8 +171,8 @@ const Navbar = () => {
                   <motion.div
                     className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                       pathname === link.href
-                        ? "text-orange-600 bg-orange-50"
-                        : "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
+                        ? "text-amber-600 bg-yellow-50"
+                        : "text-gray-700 hover:text-amber-600 hover:bg-yellow-50"
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                     whileTap={{ scale: 0.98 }}

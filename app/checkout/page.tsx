@@ -223,7 +223,7 @@ export default function CheckoutPage() {
                       onChange={handleInputChange}
                       rows={3}
                       required
-                      className="px-4 py-2.5 border rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 border-gray-300"
+                      className="px-4 py-2.5 border rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200 border-gray-300"
                     />
                   </div>
                   <Input
@@ -250,7 +250,7 @@ export default function CheckoutPage() {
                       onChange={handleInputChange}
                       rows={2}
                       placeholder="Catatan untuk penjual..."
-                      className="px-4 py-2.5 border rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 border-gray-300"
+                      className="px-4 py-2.5 border rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200 border-gray-300"
                     />
                   </div>
                 </div>
@@ -272,7 +272,7 @@ export default function CheckoutPage() {
                       key={courier.id}
                       className={`flex items-center justify-between p-4 border-2 rounded-lg cursor-pointer transition-all ${
                         selectedCourier.id === courier.id
-                          ? "border-orange-600 bg-orange-50"
+                          ? "border-amber-500 bg-yellow-50"
                           : "border-gray-200 hover:border-gray-300"
                       }`}
                     >
@@ -282,7 +282,7 @@ export default function CheckoutPage() {
                           name="courier"
                           checked={selectedCourier.id === courier.id}
                           onChange={() => setSelectedCourier(courier)}
-                          className="w-4 h-4 text-orange-600 focus:ring-orange-500"
+                          className="w-4 h-4 text-amber-600 focus:ring-amber-500"
                         />
                         <div className="ml-4">
                           <p className="font-semibold text-gray-900">
@@ -317,7 +317,7 @@ export default function CheckoutPage() {
                       key={method.id}
                       className={`flex items-center justify-between p-4 border-2 rounded-lg cursor-pointer transition-all ${
                         selectedPayment.id === method.id
-                          ? "border-orange-600 bg-orange-50"
+                          ? "border-amber-500 bg-yellow-50"
                           : "border-gray-200 hover:border-gray-300"
                       }`}
                     >
@@ -327,7 +327,7 @@ export default function CheckoutPage() {
                           name="payment"
                           checked={selectedPayment.id === method.id}
                           onChange={() => setSelectedPayment(method)}
-                          className="w-4 h-4 text-orange-600 focus:ring-orange-500"
+                          className="w-4 h-4 text-amber-600 focus:ring-amber-500"
                         />
                         <div className="ml-4">
                           <p className="font-semibold text-gray-900">

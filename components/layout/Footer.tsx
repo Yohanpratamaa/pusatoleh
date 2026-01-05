@@ -73,7 +73,7 @@ const Footer = () => {
               transition={{ duration: 0.5 }}
             >
               <div className="flex items-center space-x-2 mb-4">
-                <div className="bg-linear-to-br from-orange-500 to-amber-600 p-2 rounded-lg">
+                <div className="bg-linear-to-br from-amber-400 to-yellow-500 p-2 rounded-lg">
                   <svg
                     className="w-8 h-8 text-white"
                     fill="none"

@@ -56,7 +56,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-linear-to-br from-orange-600 to-amber-500 py-20">
+      <section className="bg-linear-to-br from-amber-500 to-yellow-400 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             className="text-4xl md:text-5xl font-bold text-white mb-4"
@@ -96,9 +96,9 @@ export default function ContactPage() {
             <div className="space-y-6">
               {/* WhatsApp */}
               <div className="flex items-start">
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center shrink-0">
                   <svg
-                    className="w-6 h-6 text-green-600"
+                    className="w-6 h-6 text-amber-600"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -114,7 +114,7 @@ export default function ContactPage() {
                     href="https://wa.me/6285119955641"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-orange-600 hover:text-orange-700 text-sm font-medium"
+                    className="text-amber-600 hover:text-amber-700 text-sm font-medium"
                   >
                     Chat Sekarang →
                   </a>
@@ -145,7 +145,7 @@ export default function ContactPage() {
                   <p className="text-gray-600">pusatoleholehbampia@gmail.com</p>
                   <a
                     href="mailto:pusatoleholehbampia@gmail.com"
-                    className="text-orange-600 hover:text-orange-700 text-sm font-medium"
+                    className="text-amber-600 hover:text-amber-700 text-sm font-medium"
                   >
                     Kirim Email →
                   </a>
@@ -154,9 +154,9 @@ export default function ContactPage() {
 
               {/* Address */}
               <div className="flex items-start">
-                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center shrink-0">
                   <svg
-                    className="w-6 h-6 text-orange-600"
+                    className="w-6 h-6 text-amber-600"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -262,7 +262,7 @@ export default function ContactPage() {
                   onChange={handleInputChange}
                   rows={5}
                   required
-                  className="px-4 py-2.5 border rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 border-gray-300 text-gray-900"
+                  className="px-4 py-2.5 border rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200 border-gray-300 text-gray-900"
                   placeholder="Tulis pesan Anda di sini..."
                 />
               </div>

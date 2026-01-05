@@ -1,21 +1,25 @@
-'use client';
+"use client";
 
-import { useState, use } from 'react';
-import { notFound } from 'next/navigation';
-import Image from 'next/image';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { products } from '@/data/products';
-import { useCartStore } from '@/lib/store';
-import Button from '@/components/ui/Button';
-import ProductCard from '@/components/product/ProductCard';
-import { formatPrice, formatWeight } from '@/utils/helpers';
-import toast from 'react-hot-toast';
+import { useState, use } from "react";
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { products } from "@/data/products";
+import { useCartStore } from "@/lib/store";
+import Button from "@/components/ui/Button";
+import ProductCard from "@/components/product/ProductCard";
+import { formatPrice, formatWeight } from "@/utils/helpers";
+import toast from "react-hot-toast";
 
-export default function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+export default function ProductDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = use(params);
   const product = products.find((p) => p.slug === slug);
-  
+
   if (!product) {
     notFound();
   }
@@ -42,11 +46,14 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center gap-2 text-sm">
-            <Link href="/" className="text-gray-600 hover:text-orange-600">
+            <Link href="/" className="text-gray-600 hover:text-amber-600">
               Beranda
             </Link>
             <span className="text-gray-400">/</span>
-            <Link href="/products" className="text-gray-600 hover:text-orange-600">
+            <Link
+              href="/products"
+              className="text-gray-600 hover:text-amber-600"
+            >
               Produk
             </Link>
             <span className="text-gray-400">/</span>
@@ -67,18 +74,20 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
             {/* Main Image */}
             <div className="relative h-96 md:h-[500px] bg-white rounded-2xl overflow-hidden shadow-lg mb-4">
               <Image
-                src={product.images[selectedImage] || '/placeholder-product.jpg'}
+                src={
+                  product.images[selectedImage] || "/placeholder-product.jpg"
+                }
                 alt={product.name}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
-              
+
               {/* Badges */}
               {product.isBestSeller && (
                 <div className="absolute top-4 left-4">
-                  <span className="bg-orange-500 text-white text-sm font-semibold px-4 py-2 rounded-full shadow-lg">
+                  <span className="bg-amber-500 text-white text-sm font-semibold px-4 py-2 rounded-full shadow-lg">
                     Best Seller
                   </span>
                 </div>
@@ -94,8 +103,8 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                     onClick={() => setSelectedImage(index)}
                     className={`relative h-24 bg-white rounded-lg overflow-hidden border-2 transition-all ${
                       selectedImage === index
-                        ? 'border-orange-600 shadow-md'
-                        : 'border-gray-200 hover:border-gray-300'
+                        ? "border-amber-500 shadow-md"
+                        : "border-gray-200 hover:border-gray-300"
                     }`}
                   >
                     <Image
@@ -118,7 +127,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
             transition={{ duration: 0.5 }}
           >
             {/* Category */}
-            <p className="text-sm text-orange-600 font-semibold uppercase tracking-wide mb-2">
+            <p className="text-sm text-amber-600 font-semibold uppercase tracking-wide mb-2">
               {product.category}
             </p>
 
@@ -134,7 +143,9 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                   <svg
                     key={i}
                     className={`w-5 h-5 ${
-                      i < Math.floor(product.rating) ? 'fill-current' : 'fill-gray-300'
+                      i < Math.floor(product.rating)
+                        ? "fill-current"
+                        : "fill-gray-300"
                     }`}
                     viewBox="0 0 20 20"
                   >
@@ -164,20 +175,30 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
             {/* Description */}
             <div className="bg-gray-50 rounded-xl p-6 mb-6">
               <h3 className="font-semibold text-gray-900 mb-2">Deskripsi</h3>
-              <p className="text-gray-700 leading-relaxed">{product.description}</p>
+              <p className="text-gray-700 leading-relaxed">
+                {product.description}
+              </p>
             </div>
 
             {/* Product Details */}
             <div className="bg-gray-50 rounded-xl p-6 mb-6">
-              <h3 className="font-semibold text-gray-900 mb-4">Detail Produk</h3>
+              <h3 className="font-semibold text-gray-900 mb-4">
+                Detail Produk
+              </h3>
               <div className="space-y-2 text-gray-700">
                 <div className="flex justify-between">
                   <span>Berat:</span>
-                  <span className="font-medium">{formatWeight(product.weight)}</span>
+                  <span className="font-medium">
+                    {formatWeight(product.weight)}
+                  </span>
                 </div>
                 <div className="flex justify-between">
                   <span>Stok:</span>
-                  <span className={`font-medium ${product.stock < 10 ? 'text-red-600' : 'text-green-600'}`}>
+                  <span
+                    className={`font-medium ${
+                      product.stock < 10 ? "text-red-600" : "text-green-600"
+                    }`}
+                  >
                     {product.stock} tersedia
                   </span>
                 </div>
@@ -214,9 +235,13 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                     />
                   </svg>
                 </button>
-                <span className="text-xl font-semibold w-12 text-center">{quantity}</span>
+                <span className="text-xl font-semibold w-12 text-center">
+                  {quantity}
+                </span>
                 <button
-                  onClick={() => setQuantity(Math.min(product.stock, quantity + 1))}
+                  onClick={() =>
+                    setQuantity(Math.min(product.stock, quantity + 1))
+                  }
                   className="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-lg hover:bg-gray-300 transition-colors"
                   disabled={quantity >= product.stock}
                 >
@@ -259,7 +284,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                     d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                   />
                 </svg>
-                {product.stock === 0 ? 'Stok Habis' : 'Tambah ke Keranjang'}
+                {product.stock === 0 ? "Stok Habis" : "Tambah ke Keranjang"}
               </Button>
             </div>
           </motion.div>
