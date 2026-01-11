@@ -89,17 +89,6 @@ function SuccessContent() {
             Terima kasih telah berbelanja. Pesanan Anda sedang diproses.
           </motion.p>
 
-          {/* Order Number */}
-          <motion.div
-            className="bg-gray-50 rounded-xl p-6 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-          >
-            <p className="text-sm text-gray-600 mb-2">Nomor Pesanan</p>
-            <p className="text-2xl font-bold text-amber-600">{orderNumber}</p>
-          </motion.div>
-
           {/* Order Summary */}
           <motion.div
             className="border-t border-gray-200 pt-6 mb-8 text-left"
@@ -120,7 +109,7 @@ function SuccessContent() {
                   <span className="text-gray-600">
                     {item.product.name} x{item.quantity}
                   </span>
-                  <span className="font-medium">
+                  <span className="font-medium text-black">
                     {formatPrice(item.product.price * item.quantity)}
                   </span>
                 </div>
@@ -132,50 +121,11 @@ function SuccessContent() {
                 <span>Subtotal</span>
                 <span>{formatPrice(order.subtotal)}</span>
               </div>
-              <div className="flex justify-between text-sm text-gray-600">
-                <span>Ongkir ({order.courier?.name})</span>
-                <span>{formatPrice(order.shippingCost)}</span>
-              </div>
               <div className="flex justify-between text-lg font-bold text-gray-900 pt-2">
                 <span>Total</span>
                 <span>{formatPrice(order.total)}</span>
               </div>
             </div>
-          </motion.div>
-
-          {/* Payment Info */}
-          <motion.div
-            className="bg-yellow-50 rounded-xl p-6 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
-          >
-            <h3 className="font-semibold text-gray-900 mb-3">
-              Informasi Pembayaran
-            </h3>
-            <p className="text-sm text-gray-700 mb-2">
-              Metode:{" "}
-              <span className="font-medium">{order.paymentMethod?.name}</span>
-            </p>
-            {order.paymentMethod?.accountNumber && (
-              <div className="text-sm text-gray-700">
-                <p>
-                  No. Rekening:{" "}
-                  <span className="font-medium">
-                    {order.paymentMethod.accountNumber}
-                  </span>
-                </p>
-                <p>
-                  Atas Nama:{" "}
-                  <span className="font-medium">
-                    {order.paymentMethod.accountName}
-                  </span>
-                </p>
-              </div>
-            )}
-            <p className="text-xs text-gray-600 mt-3">
-              Silakan lakukan pembayaran dalam 24 jam
-            </p>
           </motion.div>
 
           {/* Shipping Address */}
@@ -207,11 +157,6 @@ function SuccessContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9 }}
           >
-            <Link href={`/tracking?order=${orderNumber}`} className="flex-1">
-              <Button variant="primary" fullWidth>
-                Lacak Pesanan
-              </Button>
-            </Link>
             <Link href="/" className="flex-1">
               <Button variant="outline" fullWidth>
                 Kembali ke Beranda

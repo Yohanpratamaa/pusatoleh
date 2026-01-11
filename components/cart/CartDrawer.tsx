@@ -141,7 +141,7 @@ const CartDrawer = () => {
                           </p>
 
                           {/* Quantity Controls */}
-                          <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-2 text-gray-700">
                             <button
                               onClick={() =>
                                 updateQuantity(

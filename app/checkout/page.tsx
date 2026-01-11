@@ -15,29 +15,22 @@ const couriers: Courier[] = [
     id: "1",
     name: "JNE",
     service: "Reguler",
-    cost: 15000,
-    estimatedDays: "3-4",
+    cost: 0,
+    estimatedDays: "",
   },
   {
     id: "2",
-    name: "JNE",
-    service: "Express",
-    cost: 25000,
-    estimatedDays: "1-2",
+    name: "J&T (JNT)",
+    service: "Reguler",
+    cost: 0,
+    estimatedDays: "",
   },
   {
     id: "3",
-    name: "J&T",
+    name: "PAXEL",
     service: "Reguler",
-    cost: 12000,
-    estimatedDays: "3-5",
-  },
-  {
-    id: "4",
-    name: "SiCepat",
-    service: "Reguler",
-    cost: 10000,
-    estimatedDays: "4-6",
+    cost: 0,
+    estimatedDays: "",
   },
 ];
 
@@ -91,19 +84,51 @@ export default function CheckoutPage() {
     e.preventDefault();
 
     // Validation
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.phone ||
-      !formData.address
-    ) {
+    if (!formData.name || !formData.phone || !formData.address) {
       toast.error("Mohon lengkapi semua data yang diperlukan");
       return;
     }
 
-    const orderNumber = generateOrderNumber();
+    // Build order items list
+    const orderItems = items
+      .map((item) => {
+        return `${item.quantity}x ${item.product.name} - ${formatPrice(
+          item.product.price * item.quantity
+        )}`;
+      })
+      .join("\n");
 
-    // Store order in localStorage
+    // Build WhatsApp message
+    const message = `Halo Admin, saya ingin pesan oleh-oleh dengan informasi sebagai berikut:
+
+Nama Lengkap: ${formData.name}
+No. Telepon: ${formData.phone}
+Alamat Lengkap: ${formData.address}
+Kode Pos: ${formData.postalCode || "-"}
+Kota/Kabupaten: ${formData.city || "-"}
+Provinsi: ${formData.province || "-"}
+Catatan: ${formData.notes || "-"}
+
+*Pesanan:*
+*${orderItems}*
+
+Subtotal: ${formatPrice(subtotal)}
+Metode Pengiriman: ${selectedCourier.name} - ${selectedCourier.service}
+*Total: ${formatPrice(total)}*
+
+Terima kasih`;
+
+    // Encode message for URL
+    const encodedMessage = encodeURIComponent(message);
+
+    // WhatsApp Business number (ganti dengan nomor WhatsApp Business Anda)
+    const whatsappNumber = "6285922549243"; // Format: 62xxx tanpa +
+
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Store order in localStorage for tracking
+    const orderNumber = generateOrderNumber();
     localStorage.setItem(
       "lastOrder",
       JSON.stringify({
@@ -119,8 +144,17 @@ export default function CheckoutPage() {
       })
     );
 
-    clearCart();
-    router.push(`/success?order=${orderNumber}`);
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, "_blank");
+
+    // Show success message
+    toast.success("Mengarahkan ke WhatsApp...");
+
+    // Clear cart and redirect after a short delay
+    setTimeout(() => {
+      clearCart();
+      router.push(`/success?order=${orderNumber}`);
+    }, 1000);
   };
 
   if (items.length === 0) {
@@ -189,15 +223,6 @@ export default function CheckoutPage() {
                     fullWidth
                   />
                   <Input
-                    label="Email *"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    fullWidth
-                  />
-                  <Input
                     label="No. Telepon *"
                     name="phone"
                     type="tel"
@@ -223,7 +248,7 @@ export default function CheckoutPage() {
                       onChange={handleInputChange}
                       rows={3}
                       required
-                      className="px-4 py-2.5 border rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200 border-gray-300"
+                      className="px-4 py-2.5 text-black border rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200 border-gray-300"
                     />
                   </div>
                   <Input
@@ -250,13 +275,13 @@ export default function CheckoutPage() {
                       onChange={handleInputChange}
                       rows={2}
                       placeholder="Catatan untuk penjual..."
-                      className="px-4 py-2.5 border rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200 border-gray-300"
+                      className="px-4 py-2.5 text-black border rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200 border-gray-300"
                     />
                   </div>
                 </div>
               </motion.div>
 
-              {/* Courier Selection */}
+              {/* Shipping Method */}
               <motion.div
                 className="bg-white rounded-2xl shadow-md p-6"
                 initial={{ opacity: 0, y: 20 }}
@@ -264,79 +289,35 @@ export default function CheckoutPage() {
                 transition={{ delay: 0.2 }}
               >
                 <h2 className="text-xl font-bold text-gray-900 mb-4">
-                  Pilih Kurir
+                  Metode Pengiriman
                 </h2>
                 <div className="space-y-3">
                   {couriers.map((courier) => (
                     <label
                       key={courier.id}
-                      className={`flex items-center justify-between p-4 border-2 rounded-lg cursor-pointer transition-all ${
+                      className={`flex items-center p-4 border-2 rounded-xl cursor-pointer transition-all duration-200 ${
                         selectedCourier.id === courier.id
-                          ? "border-amber-500 bg-yellow-50"
-                          : "border-gray-200 hover:border-gray-300"
+                          ? "border-amber-500 bg-amber-50"
+                          : "border-gray-200 hover:border-amber-300 hover:bg-gray-50"
                       }`}
                     >
-                      <div className="flex items-center">
+                      <div className="flex items-center gap-4 w-full">
                         <input
                           type="radio"
                           name="courier"
+                          value={courier.id}
                           checked={selectedCourier.id === courier.id}
                           onChange={() => setSelectedCourier(courier)}
                           className="w-4 h-4 text-amber-600 focus:ring-amber-500"
                         />
-                        <div className="ml-4">
-                          <p className="font-semibold text-gray-900">
-                            {courier.name} - {courier.service}
-                          </p>
-                          <p className="text-sm text-gray-600">
-                            Estimasi {courier.estimatedDays} hari
-                          </p>
-                        </div>
-                      </div>
-                      <span className="font-bold text-gray-900">
-                        {formatPrice(courier.cost)}
-                      </span>
-                    </label>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* Payment Method */}
-              <motion.div
-                className="bg-white rounded-2xl shadow-md p-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-              >
-                <h2 className="text-xl font-bold text-gray-900 mb-4">
-                  Metode Pembayaran
-                </h2>
-                <div className="space-y-3">
-                  {paymentMethods.map((method) => (
-                    <label
-                      key={method.id}
-                      className={`flex items-center justify-between p-4 border-2 rounded-lg cursor-pointer transition-all ${
-                        selectedPayment.id === method.id
-                          ? "border-amber-500 bg-yellow-50"
-                          : "border-gray-200 hover:border-gray-300"
-                      }`}
-                    >
-                      <div className="flex items-center">
-                        <input
-                          type="radio"
-                          name="payment"
-                          checked={selectedPayment.id === method.id}
-                          onChange={() => setSelectedPayment(method)}
-                          className="w-4 h-4 text-amber-600 focus:ring-amber-500"
-                        />
-                        <div className="ml-4">
-                          <p className="font-semibold text-gray-900">
-                            {method.name}
-                          </p>
-                          {method.accountNumber && (
-                            <p className="text-sm text-gray-600">
-                              {method.accountNumber} - {method.accountName}
-                            </p>
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold text-gray-900">
+                            {courier.name}
+                          </span>
+                          {courier.service && (
+                            <span className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full">
+                              {courier.service}
+                            </span>
                           )}
                         </div>
                       </div>
@@ -385,15 +366,14 @@ export default function CheckoutPage() {
                       {formatPrice(subtotal)}
                     </span>
                   </div>
-                  <div className="flex justify-between text-gray-600">
-                    <span>Ongkir</span>
-                    <span className="font-semibold">
-                      {formatPrice(shippingCost)}
-                    </span>
-                  </div>
                   <div className="flex justify-between text-lg font-bold text-gray-900 pt-2 border-t border-gray-200">
                     <span>Total</span>
-                    <span>{formatPrice(total)}</span>
+                    <div className="flex flex-col items-end">
+                      <span>{formatPrice(total)}</span>
+                      <span className="text-xs text-gray-600">
+                        Belum termasuk ongkir*
+                      </span>
+                    </div>
                   </div>
                 </div>
 
