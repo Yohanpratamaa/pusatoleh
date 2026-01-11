@@ -115,6 +115,7 @@ Catatan: ${formData.notes || "-"}
 Subtotal: ${formatPrice(subtotal)}
 Metode Pengiriman: ${selectedCourier.name} - ${selectedCourier.service}
 *Total: ${formatPrice(total)}*
+(Belum Termasuk ongkir)
 
 Terima kasih`;
 
