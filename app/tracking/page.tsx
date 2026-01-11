@@ -12,7 +12,7 @@ const socialMediaPlatforms = [
     icon: "📸",
     color: "from-purple-500 to-pink-500",
     username: "@bampiasrengat",
-    followers: "15.2K",
+    followers: "988",
     url: "https://www.instagram.com/bampiasrengat",
     posts: [
       {
@@ -40,25 +40,25 @@ const socialMediaPlatforms = [
       },
     ],
   },
-  {
-    id: "shopee",
-    name: "Shopee",
-    icon: "🛍️",
-    color: "from-orange-500 to-red-500",
-    username: "Bampia Srengat Official",
-    followers: "8.7K",
-    url: "https://shopee.co.id/bampiasrengat",
-    rating: "4.9",
-    sold: "12K+",
-    posts: [
-      {
-        image: "/bg.png",
-        caption: "Flash Sale Bampia Kacang Hijau",
-        price: "Rp 35.000",
-        discount: "20%",
-      },
-    ],
-  },
+  // {
+  //   id: "shopee",
+  //   name: "Shopee",
+  //   icon: "🛍️",
+  //   color: "from-orange-500 to-red-500",
+  //   username: "Bampia Srengat Official",
+  //   followers: "8.7K",
+  //   url: "https://shopee.co.id/bampiasrengat",
+  //   rating: "4.9",
+  //   sold: "12K+",
+  //   posts: [
+  //     {
+  //       image: "/bg.png",
+  //       caption: "Flash Sale Bampia Kacang Hijau",
+  //       price: "Rp 35.000",
+  //       discount: "20%",
+  //     },
+  //   ],
+  // },
   {
     id: "tiktok",
     name: "TikTok",
@@ -275,7 +275,7 @@ export default function SocialMediaPage() {
                           <div className="text-white/80">Followers</div>
                         </div>
                       )}
-                      {platform.rating && (
+                      {/* {platform.rating && (
                         <div>
                           <div className="font-bold text-lg">
                             {platform.rating}⭐
@@ -290,7 +290,7 @@ export default function SocialMediaPage() {
                           </div>
                           <div className="text-white/80">Terjual</div>
                         </div>
-                      )}
+                      )} */}
                     </div>
                   </div>
                 </div>
@@ -335,7 +335,7 @@ export default function SocialMediaPage() {
                                 <span>{post.views}</span>
                               </div>
                             )}
-                            {"price" in post && post.price && (
+                            {/* {"price" in post && post.price && (
                               <div className="flex items-center gap-2 ml-auto">
                                 <span className="font-bold text-amber-600">
                                   {post.price}
@@ -346,7 +346,7 @@ export default function SocialMediaPage() {
                                   </span>
                                 )}
                               </div>
-                            )}
+                            )} */}
                           </div>
                         </div>
                       </motion.div>

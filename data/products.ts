@@ -5,7 +5,7 @@ export const products: Product[] = [
   {
     id: "1",
     slug: "bakpia-kacang-hijau",
-    name: "Bakpia Kacang Hijau",
+    name: "Bampia Kacang Hijau",
     description:
       "Bakpia isi kacang hijau khas Blitar dengan tekstur lembut dan rasa manis yang pas. Dibuat dari bahan pilihan dan resep turun temurun.",
     price: 27000,
@@ -21,14 +21,14 @@ export const products: Product[] = [
   {
     id: "2",
     slug: "bakpia-keju",
-    name: "Bakpia Keju",
+    name: "Bampia Keju",
     description:
       "Bakpia isi keju yang gurih dan lezat. Perpaduan sempurna antara tradisional dan modern.",
-    price: 40000,
-    originalPrice: 45000,
+    price: 30000,
+    originalPrice: 35000,
     images: ["/bampia/keju.png"],
     category: "bakpia",
-    rating: 4.8,
+    rating: 5,
     weight: 250,
     ingredients: "Tepung Terigu, Keju, Gula, Mentega",
     isFeatured: true,
@@ -37,13 +37,13 @@ export const products: Product[] = [
   {
     id: "3",
     slug: "bakpia-coklat",
-    name: "Bakpia Coklat",
+    name: "Bampia Coklat",
     description:
       "Bakpia isi coklat premium dengan rasa yang manis dan lembut di lidah. Favorit anak-anak dan dewasa.",
-    price: 40000,
+    price: 30000,
     images: ["/bampia/coklat.png"],
     category: "bakpia",
-    rating: 4.9,
+    rating: 5,
     weight: 250,
     ingredients: "Tepung Terigu, Coklat Premium, Gula, Mentega",
     isFeatured: true,
@@ -52,13 +52,13 @@ export const products: Product[] = [
   {
     id: "4",
     slug: "bakpia-durian",
-    name: "Bakpia Durian",
+    name: "Bampia Durian",
     description:
       "Bakpia isi durian asli dengan aroma dan rasa durian yang khas. Untuk pecinta durian sejati.",
-    price: 45000,
+    price: 30000,
     images: ["/bampia/durian.png"],
     category: "bakpia",
-    rating: 4.7,
+    rating: 5,
     weight: 250,
     ingredients: "Tepung Terigu, Durian Asli, Gula, Mentega",
     isFeatured: true,
@@ -66,39 +66,41 @@ export const products: Product[] = [
   {
     id: "5",
     slug: "bakpia-kelapa",
-    name: "Bakpia Kelapa",
+    name: "Bampia Kelapa",
     description:
       "Bakpia isi kelapa muda yang manis dan segar. Perpaduan tekstur kelapa yang lembut dengan kulit bakpia yang renyah.",
-    price: 35000,
+    price: 30000,
     images: ["/bampia/kelapa.png"],
     category: "bakpia",
-    rating: 4.8,
+    rating: 5,
     weight: 250,
     ingredients: "Tepung Terigu, Kelapa Muda, Gula, Mentega",
   },
   {
     id: "6",
     slug: "bakpia-vanilla",
-    name: "Bakpia Vanilla",
+    name: "Bampia Vanilla",
     description:
       "Bakpia isi vanilla dengan aroma yang harum dan rasa yang lembut. Cocok untuk semua usia.",
-    price: 38000,
+    price: 27000,
+    originalPrice: 30000,
     images: ["/bampia/vanilla.png"],
     category: "bakpia",
-    rating: 4.7,
+    rating: 5,
     weight: 250,
     ingredients: "Tepung Terigu, Vanilla, Gula, Mentega",
   },
   {
     id: "7",
     slug: "bakpia-ubi-ungu",
-    name: "Bakpia Ubi Ungu",
+    name: "Bampia Ubi Ungu",
     description:
       "Bakpia isi ubi ungu yang kaya akan antioksidan. Rasa manis alami dan warna ungu yang cantik.",
-    price: 38000,
+    price: 27000,
+    originalPrice: 30000,
     images: ["/bampia/ubiungu.png"],
     category: "bakpia",
-    rating: 4.8,
+    rating: 5,
     weight: 250,
     ingredients: "Tepung Terigu, Ubi Ungu, Gula, Mentega",
   },
@@ -108,11 +110,10 @@ export const products: Product[] = [
     name: "Bakpia Mix",
     description:
       "Paket bakpia mix dengan berbagai varian rasa favorit. Cocok untuk dinikmati bersama keluarga atau sebagai oleh-oleh.",
-    price: 75000,
-    originalPrice: 85000,
+    price: 30000,
     images: ["/bampia/mix.png"],
     category: "bakpia",
-    rating: 4.9,
+    rating: 5,
     weight: 500,
     ingredients: "Tepung Terigu, Berbagai Varian Isian, Gula, Mentega",
     isFeatured: true,
@@ -121,14 +122,14 @@ export const products: Product[] = [
   {
     id: "9",
     slug: "bakpia-mix-premium",
-    name: "Bakpia Mix Premium",
+    name: "Bampia Mix Premium",
     description:
       "Paket bakpia mix premium dengan varian rasa pilihan terbaik. Kemasan eksklusif cocok untuk hadiah spesial atau hampers.",
-    price: 95000,
-    originalPrice: 110000,
+    price: 38000,
+    originalPrice: 40000,
     images: ["/bampia/mixpremium.png"],
     category: "bakpia",
-    rating: 5.0,
+    rating: 5,
     weight: 600,
     ingredients: "Tepung Terigu, Isian Premium Pilihan, Gula, Mentega",
     isFeatured: true,
@@ -136,15 +137,15 @@ export const products: Product[] = [
   },
   {
     id: "10",
-    slug: "lapis-kukus-pelangi",
-    name: "Lapis Kukus Pelangi",
+    slug: "lapis-kukus-blackpink",
+    name: "Lapis Kukus Blackpink",
     description:
-      "Kue lapis kukus dengan 7 warna pelangi yang cantik dan lembut. Cocok untuk acara spesial.",
-    price: 65000,
-    originalPrice: 75000,
-    images: ["/products/lapis-pelangi-1.jpg", "/products/lapis-pelangi-2.jpg"],
+      "Lapis kukus dengan perpaduan warna pink dan hitam yang cantik. Tekstur lembut dengan rasa yang manis dan menarik.",
+    price: 40000,
+    originalPrice: 45000,
+    images: ["/lapis_kukus/blackpink.png"],
     category: "lapis-kukus",
-    rating: 4.8,
+    rating: 4.9,
     weight: 500,
     ingredients: "Telur, Tepung, Gula, Santan, Pewarna Alami",
     isFeatured: true,
@@ -152,33 +153,117 @@ export const products: Product[] = [
   },
   {
     id: "11",
-    slug: "lapis-kukus-pandan",
-    name: "Lapis Kukus Pandan",
+    slug: "lapis-kukus-brownies-coklat",
+    name: "Lapis Kukus Brownies Coklat",
     description:
-      "Kue lapis kukus dengan aroma pandan yang harum dan rasa yang lembut.",
-    price: 55000,
-    images: ["/products/lapis-pandan-1.jpg", "/products/lapis-pandan-2.jpg"],
+      "Brownies kukus dengan rasa coklat yang legit dan tekstur yang lembut. Favorit pecinta coklat.",
+    price: 38000,
+    images: ["/lapis_kukus/browniescoklat.png"],
     category: "lapis-kukus",
-    rating: 4.7,
+    rating: 4.8,
     weight: 500,
-    ingredients: "Telur, Tepung, Gula, Santan, Daun Pandan",
+    ingredients: "Telur, Tepung, Gula, Santan, Coklat Premium",
     isFeatured: true,
   },
   {
     id: "12",
-    slug: "lapis-kukus-coklat",
-    name: "Lapis Kukus Coklat",
+    slug: "lapis-kukus-brownies-keju",
+    name: "Lapis Kukus Brownies Keju",
     description:
-      "Kue lapis kukus coklat dengan rasa coklat yang legit dan tekstur yang lembut.",
-    price: 60000,
-    images: ["/products/lapis-coklat-1.jpg"],
+      "Brownies kukus dengan topping keju yang gurih. Perpaduan sempurna antara manis dan gurih.",
+    price: 38000,
+    images: ["/lapis_kukus/brownieskeju.png"],
     category: "lapis-kukus",
-    rating: 4.8,
+    rating: 4.9,
     weight: 500,
-    ingredients: "Telur, Tepung, Gula, Santan, Coklat Bubuk",
+    ingredients: "Telur, Tepung, Gula, Santan, Coklat, Keju",
+    isBestSeller: true,
   },
   {
     id: "13",
+    slug: "lapis-kukus-brownies-original",
+    name: "Lapis Kukus Brownies Original",
+    description:
+      "Brownies kukus original dengan rasa yang klasik dan tekstur yang lembut. Cocok untuk segala acara.",
+    price: 35000,
+    images: ["/lapis_kukus/browniesoriginal.png"],
+    category: "lapis-kukus",
+    rating: 4.7,
+    weight: 500,
+    ingredients: "Telur, Tepung, Gula, Santan, Coklat",
+  },
+  {
+    id: "14",
+    slug: "lapis-kukus-choco-pandan",
+    name: "Lapis Kukus Choco Pandan",
+    description:
+      "Lapis kukus kombinasi coklat dan pandan yang unik. Perpaduan dua rasa favorit dalam satu kue.",
+    price: 35000,
+    images: ["/lapis_kukus/chocopandan.png"],
+    category: "lapis-kukus",
+    rating: 4.8,
+    weight: 500,
+    ingredients: "Telur, Tepung, Gula, Santan, Coklat, Daun Pandan",
+    isFeatured: true,
+  },
+  {
+    id: "15",
+    slug: "lapis-kukus-choco-talas",
+    name: "Lapis Kukus Choco Talas",
+    description:
+      "Lapis kukus kombinasi coklat dan talas yang lezat. Cita rasa yang khas dan tekstur yang lembut.",
+    price: 35000,
+    images: ["/lapis_kukus/chocotalas.png"],
+    category: "lapis-kukus",
+    rating: 4.7,
+    weight: 500,
+    ingredients: "Telur, Tepung, Gula, Santan, Coklat, Talas",
+  },
+  {
+    id: "16",
+    slug: "lapis-kukus-nanas",
+    name: "Lapis Kukus Nanas",
+    description:
+      "Lapis kukus dengan rasa nanas yang segar dan manis. Cocok untuk yang menyukai rasa buah.",
+    price: 33000,
+    originalPrice: 38000,
+    images: ["/lapis_kukus/nanas.png"],
+    category: "lapis-kukus",
+    rating: 4.6,
+    weight: 500,
+    ingredients: "Telur, Tepung, Gula, Santan, Nanas",
+  },
+  {
+    id: "17",
+    slug: "lapis-kukus-pandan-original",
+    name: "Lapis Kukus Pandan Original",
+    description:
+      "Lapis kukus pandan original dengan aroma pandan yang harum dan rasa yang lembut. Klasik dan selalu disukai.",
+    price: 33000,
+    images: ["/lapis_kukus/pandanoriginal.png"],
+    category: "lapis-kukus",
+    rating: 4.8,
+    weight: 500,
+    ingredients: "Telur, Tepung, Gula, Santan, Daun Pandan",
+  },
+  {
+    id: "18",
+    slug: "lapis-kukus-red-velvet",
+    name: "Lapis Kukus Red Velvet",
+    description:
+      "Lapis kukus red velvet dengan warna merah yang cantik dan rasa yang lembut. Premium dan elegan.",
+    price: 33000,
+    originalPrice: 35000,
+    images: ["/lapis_kukus/redvelvet.png"],
+    category: "lapis-kukus",
+    rating: 5.0,
+    weight: 500,
+    ingredients: "Telur, Tepung, Gula, Santan, Coklat, Pewarna Alami",
+    isFeatured: true,
+    isBestSeller: true,
+  },
+  {
+    id: "19",
     slug: "abon-gulung-sapi",
     name: "Abon Gulung Sapi",
     description:
@@ -192,7 +277,7 @@ export const products: Product[] = [
     isBestSeller: true,
   },
   {
-    id: "14",
+    id: "20",
     slug: "abon-gulung-ayam",
     name: "Abon Gulung Ayam",
     description:
@@ -205,7 +290,7 @@ export const products: Product[] = [
     ingredients: "Kulit Lumpia, Abon Ayam, Bawang, Rempah",
   },
   {
-    id: "15",
+    id: "21",
     slug: "abon-gulung-pedas",
     name: "Abon Gulung Pedas",
     description:
@@ -218,7 +303,7 @@ export const products: Product[] = [
     ingredients: "Kulit Lumpia, Abon, Cabai, Bawang, Rempah",
   },
   {
-    id: "16",
+    id: "22",
     slug: "sambal-pecel-madiun",
     name: "Sambal Pecel Madiun",
     description:
@@ -232,7 +317,7 @@ export const products: Product[] = [
     isFeatured: true,
   },
   {
-    id: "17",
+    id: "23",
     slug: "sambal-bawang",
     name: "Sambal Bawang Goreng",
     description:
@@ -245,7 +330,7 @@ export const products: Product[] = [
     ingredients: "Bawang Merah, Cabai, Minyak, Garam",
   },
   {
-    id: "18",
+    id: "24",
     slug: "keripik-singkong-original",
     name: "Keripik Singkong Original",
     description:
@@ -263,7 +348,7 @@ export const products: Product[] = [
     isBestSeller: true,
   },
   {
-    id: "19",
+    id: "25",
     slug: "keripik-tempe-pedas",
     name: "Keripik Tempe Pedas",
     description:
@@ -276,7 +361,7 @@ export const products: Product[] = [
     ingredients: "Tempe, Cabai, Bawang, Gula, Garam",
   },
   {
-    id: "20",
+    id: "26",
     slug: "keripik-pisang-coklat",
     name: "Keripik Pisang Coklat",
     description:
@@ -289,7 +374,7 @@ export const products: Product[] = [
     ingredients: "Pisang, Coklat, Gula, Minyak Goreng",
   },
   {
-    id: "21",
+    id: "27",
     slug: "kopi-arabica-blitar",
     name: "Kopi Arabica Blitar",
     description:
@@ -303,7 +388,7 @@ export const products: Product[] = [
     isFeatured: true,
   },
   {
-    id: "22",
+    id: "28",
     slug: "teh-poci-tubruk",
     name: "Teh Poci Tubruk",
     description:
@@ -316,7 +401,7 @@ export const products: Product[] = [
     ingredients: "Daun Teh, Melati",
   },
   {
-    id: "23",
+    id: "29",
     slug: "wedang-uwuh",
     name: "Wedang Uwuh Sachet",
     description:
@@ -329,7 +414,7 @@ export const products: Product[] = [
     ingredients: "Jahe, Kayu Manis, Cengkeh, Gula Batu",
   },
   {
-    id: "24",
+    id: "30",
     slug: "dodol-durian",
     name: "Dodol Durian Premium",
     description:
@@ -344,7 +429,7 @@ export const products: Product[] = [
     isBestSeller: true,
   },
   {
-    id: "25",
+    id: "31",
     slug: "jenang-gula-kelapa",
     name: "Jenang Gula Kelapa",
     description:

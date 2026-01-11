@@ -22,7 +22,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Menyediakan oleh-oleh khas Indonesia berkualitas sejak 2014
+            Menyediakan oleh-oleh khas Indonesia berkualitas sejak 2022
           </motion.p>
         </div>
       </section>
@@ -41,7 +41,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  Toko Oleh-Oleh berdiri sejak tahun 2014 dengan misi untuk
+                  Toko Oleh-Oleh berdiri sejak tahun 2022 dengan misi untuk
                   melestarikan dan mempromosikan produk-produk tradisional
                   Indonesia ke seluruh nusantara.
                 </p>
