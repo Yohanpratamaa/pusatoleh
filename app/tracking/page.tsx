@@ -291,14 +291,6 @@ export default function SocialMediaPage() {
                           <div className="text-white/80">Terjual</div>
                         </div>
                       )}
-                      {platform.responseTime && (
-                        <div>
-                          <div className="font-bold text-lg">
-                            {platform.responseTime}
-                          </div>
-                          <div className="text-white/80">Response</div>
-                        </div>
-                      )}
                     </div>
                   </div>
                 </div>
@@ -325,30 +317,30 @@ export default function SocialMediaPage() {
                             {post.caption}
                           </p>
                           <div className="flex items-center gap-4 text-xs text-gray-600">
-                            {post.likes && (
+                            {"likes" in post && post.likes && (
                               <div className="flex items-center gap-1">
                                 <span>❤️</span>
                                 <span>{post.likes}</span>
                               </div>
                             )}
-                            {post.comments && (
+                            {"comments" in post && post.comments && (
                               <div className="flex items-center gap-1">
                                 <span>💬</span>
                                 <span>{post.comments}</span>
                               </div>
                             )}
-                            {post.views && (
+                            {"views" in post && post.views && (
                               <div className="flex items-center gap-1">
                                 <span>👁️</span>
                                 <span>{post.views}</span>
                               </div>
                             )}
-                            {post.price && (
+                            {"price" in post && post.price && (
                               <div className="flex items-center gap-2 ml-auto">
                                 <span className="font-bold text-amber-600">
                                   {post.price}
                                 </span>
-                                {post.discount && (
+                                {"discount" in post && post.discount && (
                                   <span className="bg-red-500 text-white px-2 py-0.5 rounded text-xs font-bold">
                                     -{post.discount}
                                   </span>
