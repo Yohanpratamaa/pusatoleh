@@ -62,22 +62,6 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
                 </span>
               )}
             </div>
-
-            {/* Stock Badge */}
-            {product.stock < 10 && product.stock > 0 && (
-              <div className="absolute top-3 right-3">
-                <span className="bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                  Stok: {product.stock}
-                </span>
-              </div>
-            )}
-            {product.stock === 0 && (
-              <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                <span className="bg-gray-800 text-white text-sm font-semibold px-4 py-2 rounded-lg">
-                  Habis
-                </span>
-              </div>
-            )}
           </div>
 
           {/* Content */}
@@ -109,9 +93,6 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
                   </svg>
                 ))}
               </div>
-              <span className="text-xs text-gray-600">
-                ({product.reviewCount})
-              </span>
             </div>
 
             {/* Price */}
@@ -133,7 +114,6 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
                 size="sm"
                 fullWidth
                 onClick={handleAddToCart}
-                disabled={product.stock === 0}
               >
                 <svg
                   className="w-4 h-4 mr-2"
@@ -148,7 +128,7 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
                     d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                   />
                 </svg>
-                {product.stock === 0 ? "Habis" : "Tambah"}
+                Tambah
               </Button>
             </div>
           </div>

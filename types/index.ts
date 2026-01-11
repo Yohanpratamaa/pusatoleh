@@ -10,8 +10,8 @@ export interface Product {
   images: string[];
   category: string;
   rating: number;
-  reviewCount: number;
-  stock: number;
+  reviewCount?: number;
+  stock?: number;
   weight: number; // in grams
   ingredients?: string;
   isFeatured?: boolean;

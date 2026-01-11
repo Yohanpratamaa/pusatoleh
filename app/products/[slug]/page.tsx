@@ -153,9 +153,7 @@ export default function ProductDetailPage({
                   </svg>
                 ))}
               </div>
-              <span className="text-gray-600">
-                {product.rating} ({product.reviewCount} ulasan)
-              </span>
+              <span className="text-gray-600">{product.rating}</span>
             </div>
 
             {/* Price */}
@@ -192,16 +190,6 @@ export default function ProductDetailPage({
                     {formatWeight(product.weight)}
                   </span>
                 </div>
-                <div className="flex justify-between">
-                  <span>Stok:</span>
-                  <span
-                    className={`font-medium ${
-                      product.stock < 10 ? "text-red-600" : "text-green-600"
-                    }`}
-                  >
-                    {product.stock} tersedia
-                  </span>
-                </div>
                 {product.ingredients && (
                   <div className="pt-2 border-t border-gray-200">
                     <span className="block mb-1">Komposisi:</span>
@@ -216,7 +204,7 @@ export default function ProductDetailPage({
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Jumlah
               </label>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 text-black">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
                   className="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-lg hover:bg-gray-300 transition-colors"
@@ -239,11 +227,8 @@ export default function ProductDetailPage({
                   {quantity}
                 </span>
                 <button
-                  onClick={() =>
-                    setQuantity(Math.min(product.stock, quantity + 1))
-                  }
+                  onClick={() => setQuantity(quantity + 1)}
                   className="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-lg hover:bg-gray-300 transition-colors"
-                  disabled={quantity >= product.stock}
                 >
                   <svg
                     className="w-5 h-5"
@@ -269,7 +254,6 @@ export default function ProductDetailPage({
                 size="lg"
                 fullWidth
                 onClick={handleAddToCart}
-                disabled={product.stock === 0}
               >
                 <svg
                   className="w-5 h-5 mr-2"
@@ -284,7 +268,7 @@ export default function ProductDetailPage({
                     d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                   />
                 </svg>
-                {product.stock === 0 ? "Stok Habis" : "Tambah ke Keranjang"}
+                Tambah ke Keranjang
               </Button>
             </div>
           </motion.div>
