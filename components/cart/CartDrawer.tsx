@@ -178,7 +178,10 @@ const CartDrawer = () => {
                                 )
                               }
                               className="w-7 h-7 flex items-center justify-center bg-white border border-gray-300 rounded-md hover:bg-gray-100 transition-colors"
-                              disabled={item.quantity >= item.product.stock}
+                              disabled={
+                                item.quantity >=
+                                (item.product.stock ?? Infinity)
+                              }
                             >
                               <svg
                                 className="w-4 h-4"
