@@ -501,7 +501,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "3",
     name: "Yusron Hanan",
-    rating: 4,
+    rating: 5,
     comment:
       "Lapis kukusnya mantap! Tampilannya menarik dan rasanya pas di lidah.",
     date: "2024-11-05",
