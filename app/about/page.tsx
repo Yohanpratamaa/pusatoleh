@@ -1,9 +1,26 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { useState, useEffect } from "react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 
 export default function AboutPage() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = [
+    "/about/1754655866162.png",
+    "/about/1754656090223.png",
+    "/about/1754656505168.png",
+    "/about/1754656544624.png",
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // Ganti gambar setiap 5 detik
+
+    return () => clearInterval(interval);
+  }, [images.length]);
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -64,10 +81,40 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="absolute inset-0 bg-linear-to-br from-amber-400 to-yellow-500 flex items-center justify-center">
-                <span className="text-white text-8xl font-bold opacity-20">
-                  2014
-                </span>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentImageIndex}
+                  className="absolute inset-0"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1 }}
+                >
+                  <Image
+                    src={images[currentImageIndex]}
+                    alt={`Toko Oleh-Oleh ${currentImageIndex + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority={currentImageIndex === 0}
+                  />
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Indicator dots */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                {images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      index === currentImageIndex
+                        ? "bg-white w-8"
+                        : "bg-white/50 hover:bg-white/75"
+                    }`}
+                    aria-label={`Go to image ${index + 1}`}
+                  />
+                ))}
               </div>
             </motion.div>
           </div>
