@@ -484,38 +484,39 @@ export const categories: Category[] = [
 export const testimonials: Testimonial[] = [
   {
     id: "1",
-    name: "Budi Santoso",
+    name: "Yohan Pratama",
     rating: 5,
     comment:
-      "Keripik singkongnya enak banget! Renyah dan gurih. Pasti order lagi!",
+      "Abon Gulungnya enak banget! Abonnya gurih banget. Pasti order lagi!",
     date: "2024-11-15",
   },
   {
     id: "2",
-    name: "Siti Nurhaliza",
+    name: "Yessy Permatasari",
     rating: 5,
     comment:
-      "Dodol duriannya premium banget, rasanya autentik. Cocok buat oleh-oleh!",
+      "Bampianya premium banget, rasanya autentik. Cocok buat oleh-oleh!",
     date: "2024-11-10",
   },
   {
     id: "3",
-    name: "Ahmad Dhani",
+    name: "Yusron Hanan",
     rating: 4,
-    comment: "Kopi Torajanya mantap! Aromanya wangi dan rasanya pas di lidah.",
+    comment:
+      "Lapis kukusnya mantap! Tampilannya menarik dan rasanya pas di lidah.",
     date: "2024-11-05",
   },
   {
     id: "4",
-    name: "Dewi Lestari",
+    name: "Rosun Effendi",
     rating: 5,
     comment:
-      "Batiknya bagus banget kualitasnya. Motifnya juga cantik. Recommended!",
+      "Barang barang yang ada di toko ini berkualitas tinggi dan pelayanan sangat memuaskan.",
     date: "2024-10-28",
   },
   {
     id: "5",
-    name: "Eko Prasetyo",
+    name: "Eka Septia",
     rating: 5,
     comment: "Pelayanan cepat, packing rapi, produk sampai dengan aman. Top!",
     date: "2024-10-20",
