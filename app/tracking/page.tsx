@@ -29,7 +29,7 @@ const socialMediaPlatforms = [
     icon: "👍",
     color: "from-blue-600 to-blue-700",
     username: "Pusat Oleh Oleh Bampia Srengat",
-    followers: "23.5K",
+    followers: "1.3k",
     url: "https://www.facebook.com/bampiasrengat",
     posts: [
       {
@@ -138,7 +138,7 @@ export default function SocialMediaPage() {
             Temukan Kami Di
             <br />
             <span className="bg-gradient-to-r from-white to-yellow-100 bg-clip-text text-transparent">
-              Social Media & Marketplace
+              Social Media
             </span>
           </motion.h1>
 
@@ -148,8 +148,7 @@ export default function SocialMediaPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            Ikuti aktivitas terbaru kami, dapatkan promo eksklusif, dan belanja
-            langsung di platform favorit Anda!
+            Ikuti aktivitas terbaru kami langsung di platform favorit Anda!
           </motion.p>
 
           {/* Stats */}
@@ -160,15 +159,15 @@ export default function SocialMediaPage() {
             transition={{ delay: 0.6 }}
           >
             <div className="text-white">
-              <div className="text-3xl font-bold">79K+</div>
+              <div className="text-3xl font-bold">1.4k+</div>
               <div className="text-sm text-white/80">Total Followers</div>
             </div>
             <div className="text-white">
-              <div className="text-3xl font-bold">4.9⭐</div>
+              <div className="text-3xl font-bold">4.8⭐</div>
               <div className="text-sm text-white/80">Rating Rata-rata</div>
             </div>
             <div className="text-white">
-              <div className="text-3xl font-bold">12K+</div>
+              <div className="text-3xl font-bold">5K+</div>
               <div className="text-sm text-white/80">Produk Terjual</div>
             </div>
             <div className="text-white">
