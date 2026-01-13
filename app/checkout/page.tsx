@@ -101,23 +101,23 @@ export default function CheckoutPage() {
     // Build WhatsApp message
     const message = `Halo Admin, saya ingin pesan oleh-oleh dengan informasi sebagai berikut:
 
-    Nama Lengkap: ${formData.name}
-    No. Telepon: ${formData.phone}
-    Alamat Lengkap: ${formData.address}
-    Kode Pos: ${formData.postalCode || "-"}
-    Kota/Kabupaten: ${formData.city || "-"}
-    Provinsi: ${formData.province || "-"}
-    Catatan: ${formData.notes || "-"}
+Nama Lengkap: ${formData.name}
+No. Telepon: ${formData.phone}
+Alamat Lengkap: ${formData.address}
+Kode Pos: ${formData.postalCode || "-"}
+Kota/Kabupaten: ${formData.city || "-"}
+Provinsi: ${formData.province || "-"}
+Catatan: ${formData.notes || "-"}
 
-    *Pesanan:*
-    *${orderItems}*
+*Pesanan:*
+*${orderItems}*
 
-    Subtotal: ${formatPrice(subtotal)}
-    Metode Pengiriman: ${selectedCourier.name} - ${selectedCourier.service}
-    *Total: ${formatPrice(total)}*
-    (Belum Termasuk ongkir)
+Subtotal: ${formatPrice(subtotal)}
+Metode Pengiriman: ${selectedCourier.name} - ${selectedCourier.service}
+*Total: ${formatPrice(total)}*
+(Belum Termasuk ongkir)
 
-    Terima kasih`;
+Terima kasih`;
 
     // Encode message for URL
     const encodedMessage = encodeURIComponent(message);
