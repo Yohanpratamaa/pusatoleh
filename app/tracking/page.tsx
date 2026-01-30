@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 // Social media platforms data
 const socialMediaPlatforms = [
@@ -13,13 +14,13 @@ const socialMediaPlatforms = [
     color: "from-purple-500 to-pink-500",
     username: "@bampiasrengat",
     followers: "988",
-    url: "https://www.instagram.com/bampiasrengat",
+    url: "https://www.instagram.com/oleholehblitar_bampia",
     posts: [
       {
-        image: "/bg.png",
-        caption: "Bakpia kacang hijau special! 🥟✨",
-        likes: "1.2K",
-        comments: "89",
+        image: "/socialmedia/ig.png",
+        caption: "Abon Gulung Special! 🥟✨",
+        likes: "100",
+        comments: "10",
       },
     ],
   },
@@ -30,13 +31,13 @@ const socialMediaPlatforms = [
     color: "from-blue-600 to-blue-700",
     username: "Pusat Oleh Oleh Bampia Srengat",
     followers: "1.3k",
-    url: "https://www.facebook.com/bampiasrengat",
+    url: "https://www.facebook.com/profile.php?id=61578325912053",
     posts: [
       {
-        image: "/bg.png",
-        caption: "Testimoni pelanggan setia kami! ❤️",
-        likes: "856",
-        comments: "47",
+        image: "/socialmedia/fb.png",
+        caption: "Aturnuhun rawuh dan borongannyaa! ❤️",
+        views: "500",
+        comments: "10",
       },
     ],
   },
@@ -59,23 +60,23 @@ const socialMediaPlatforms = [
   //     },
   //   ],
   // },
-  {
-    id: "tiktok",
-    name: "TikTok",
-    icon: "🎵",
-    color: "from-black to-gray-800",
-    username: "@bampiasrengat",
-    followers: "32.1K",
-    url: "https://www.tiktok.com/@bampiasrengat",
-    posts: [
-      {
-        image: "/bg.png",
-        caption: "Behind the scenes pembuatan bakpia! 🎬",
-        views: "125K",
-        likes: "8.9K",
-      },
-    ],
-  },
+  // {
+  //   id: "tiktok",
+  //   name: "TikTok",
+  //   icon: "🎵",
+  //   color: "from-black to-gray-800",
+  //   username: "@bampiasrengat",
+  //   followers: "32.1K",
+  //   url: "https://www.tiktok.com/@bampiasrengat",
+  //   posts: [
+  //     {
+  //       image: "/bg.png",
+  //       caption: "Behind the scenes pembuatan bakpia! 🎬",
+  //       views: "125K",
+  //       likes: "8.9K",
+  //     },
+  //   ],
+  // },
 ];
 
 export default function SocialMediaPage() {
@@ -159,7 +160,7 @@ export default function SocialMediaPage() {
             transition={{ delay: 0.6 }}
           >
             <div className="text-white">
-              <div className="text-3xl font-bold">1.4k+</div>
+              <div className="text-3xl font-bold">2k+</div>
               <div className="text-sm text-white/80">Total Followers</div>
             </div>
             <div className="text-white">
@@ -304,10 +305,20 @@ export default function SocialMediaPage() {
                         whileHover={{ y: -2 }}
                       >
                         {/* Post Image */}
-                        <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200">
-                          <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                            <span className="text-6xl">{platform.icon}</span>
-                          </div>
+                        <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
+                          {post.image ? (
+                            <Image
+                              src={post.image}
+                              alt={post.caption}
+                              fill
+                              className="object-cover"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            />
+                          ) : (
+                            <div className="absolute inset-0 flex items-center justify-center text-gray-400">
+                              <span className="text-6xl">{platform.icon}</span>
+                            </div>
+                          )}
                         </div>
 
                         {/* Post Info */}
