@@ -57,7 +57,7 @@ export default function CheckoutPage() {
   const { items, getTotalPrice, clearCart } = useCartStore();
   const [selectedCourier, setSelectedCourier] = useState<Courier>(couriers[0]);
   const [selectedPayment, setSelectedPayment] = useState<PaymentMethod>(
-    paymentMethods[0]
+    paymentMethods[0],
   );
   const [formData, setFormData] = useState({
     name: "",
@@ -75,7 +75,7 @@ export default function CheckoutPage() {
   const total = subtotal + shippingCost;
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -93,7 +93,7 @@ export default function CheckoutPage() {
     const orderItems = items
       .map((item) => {
         return `${item.quantity}x ${item.product.name} - ${formatPrice(
-          item.product.price * item.quantity
+          item.product.price * item.quantity,
         )}`;
       })
       .join("\n");
@@ -123,7 +123,7 @@ Terima kasih`;
     const encodedMessage = encodeURIComponent(message);
 
     // WhatsApp Business number (ganti dengan nomor WhatsApp Business Anda)
-    const whatsappNumber = "6285922549243"; // Format: 62xxx tanpa +
+    const whatsappNumber = "6285119955641"; // Format: 62xxx tanpa +
 
     // Create WhatsApp URL
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
@@ -142,7 +142,7 @@ Terima kasih`;
         shippingCost,
         total,
         createdAt: new Date().toISOString(),
-      })
+      }),
     );
 
     // Open WhatsApp in new tab
