@@ -419,7 +419,7 @@ export default function HomePage() {
                 <p className="text-white/90 leading-relaxed text-sm">
                   Jl. Raya Bagelenan, Krajan, Bagelenan
                   <br />
-                  Kec. Srengat, Kabupaten Blitar
+                  Kec. Srengat, Kabupaten Blitar,
                   <br />
                   Jawa Timur 66152
                 </p>
@@ -521,7 +521,8 @@ export default function HomePage() {
                             d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
                           />
                         </svg>
-                        Srengat, Blitar - Jawa Timur
+                        Jl. Raya Bagelenan, Krajan, Bagelenan, Kec. Srengat,
+                        Kabupaten Blitar, Jawa Timur 66152
                       </span>
                     </div>
                   </div>
@@ -547,7 +548,7 @@ export default function HomePage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="https://maps.google.com/?q=Srengat,Blitar"
+                href="https://maps.google.com/?q=Jl.%20Raya%20Bagelenan%2C%20Krajan%2C%20Bagelenan%2C%20Kec.%20Srengat%2C%20Kabupaten%20Blitar%2C%20Jawa%20Timur%2066152"
                 target="_blank"
                 rel="noopener noreferrer"
               >
